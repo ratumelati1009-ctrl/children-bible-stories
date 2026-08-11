@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>The Life of Jesus</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&family=Noto+Sans:wght@400;700&display=swap');
+@page { size: 8.5in 11in; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans Ethiopic', 'Noto Sans', sans-serif; }
+.page {
+    width: 8.5in; height: 11in;
+    page-break-after: always;
+    position: relative; overflow: hidden;
+}
+.decorative-border {
+    position: absolute; top: 0.3in; bottom: 0.3in; left: 0.3in; right: 0.3in;
+    border: 4px double #8B4513;
+    border-radius: 12px;
+    padding: 0.4in 0.5in;
+    background: linear-gradient(135deg, #FFFFF8 0%, #FFF8E7 100%);
+    display: flex; flex-direction: column; align-items: center;
+}
+.decorative-border::before {
+    content: '';
+    position: absolute; top: 8px; bottom: 8px; left: 8px; right: 8px;
+    border: 1px solid #DAA520; border-radius: 8px;
+    pointer-events: none;
+}
+.verse-ref {
+    position: absolute; top: 15px; right: 20px;
+    font-size: 10px; color: #8B4513; font-style: italic;
+}
+.page-number {
+    position: absolute; bottom: 15px; right: 20px;
+    font-size: 10px; color: #8B4513;
+}
+.title-en {
+    font-size: 22px; color: #3E2723; margin-top: 10px;
+    text-align: center; font-weight: 700;
+}
+.title-ti {
+    font-size: 18px; color: #BF360C; margin-top: 5px;
+    text-align: center; font-weight: 700;
+}
+.illustration {
+    margin: 12px 0; text-align: center;
+}
+.illustration svg { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.story-text { flex: 1; overflow: hidden; width: 100%; }
+.text-en { font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 8px; text-align: justify; }
+.text-ti { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 8px; text-align: justify; }
+.moral-box {
+    width: 100%; background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    border: 2px solid #F57C00; border-radius: 8px;
+    padding: 10px 15px; margin-top: auto;
+}
+.moral-label { font-size: 11px; font-weight: 700; color: #E65100; margin-bottom: 4px; text-transform: uppercase; }
+.moral-en { font-size: 12px; color: #333; font-style: italic; margin-bottom: 3px; }
+.moral-ti { font-size: 12px; color: #555; font-style: italic; }
+.cover-page {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center;
+    background: linear-gradient(180deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+}
+.cover-page .decorative-border {
+    background: linear-gradient(180deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+    border-color: #FFD700;
+}
+.cover-page .decorative-border::before { border-color: #FFD700; }
+.cover-title-en { font-size: 36px; color: #FFD700; font-weight: 700; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.cover-title-ti { font-size: 28px; color: #FFC107; font-weight: 700; margin-bottom: 30px; }
+.cover-subtitle { font-size: 14px; color: #E3F2FD; margin-top: 20px; }
+.cover-cross { font-size: 60px; color: #FFD700; margin: 20px 0; }
+</style>
+</head>
+<body>
+<div class="page cover-page">
+    <div class="decorative-border">
+        <div class="cover-cross">&#10013;</div>
+        <h1 class="cover-title-en">The Life of Jesus</h1>
+        <h2 class="cover-title-ti">ህይወት ኢየሱስ</h2>
+        <p class="cover-subtitle">Bible Stories for Children &bull; ዛንታታት መጽሓፍ ቅዱስ ንቈልዑ</p>
+        <p class="cover-subtitle">Ages 6-13 &bull; ዕድመ 6-13</p>
+    </div>
+</div>
+
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">Luke 2:7-14</div>
+            <div class="page-number">Page 1</div>
+            <h1 class="title-en">The Birth of Jesus</h1>
+            <h2 class="title-ti">ልደት ኢየሱስ</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <polygon points="150.0,40.0 80.0,90.0 220.0,90.0" fill="#8B4513" opacity="0.6"/>
+    <line x1="80.0" y1="90.0" x2="80.0" y2="140.0" stroke="#8B4513" stroke-width="4"/>
+    <line x1="220.0" y1="90.0" x2="220.0" y2="140.0" stroke="#8B4513" stroke-width="4"/>
+    <polygon points="150.0,20.0 145.0,35.0 155.0,35.0" fill="#FFD700"/>
+    <polygon points="150.0,20.0 147.0,38.0 153.0,38.0 158.0,32.0 142.0,32.0" fill="#FFD700"/>
+    <circle cx="150.0" cy="28.0" r="6.0" fill="#FFD700" opacity="0.5"/>
+    <rect x="130.0" y="110.0" width="40.0" height="20.0" fill="#DAA520" stroke="#8B4513" stroke-width="2"/>
+    <ellipse cx="150.0" cy="110.0" rx="12.0" ry="8.0" fill="#FFFACD"/>
+    <circle cx="150.0" cy="105.0" r="5.0" fill="#FDBCB4"/>
+    <rect x="110.0" y="130.0" width="80.0" height="10.0" fill="#DAA520" opacity="0.5"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">Mary and Joseph traveled to Bethlehem. There was no room for them at the inn, so baby Jesus was born in a stable and laid in a manger. Angels appeared to shepherds saying, &#x27;Good news! A Savior is born today!&#x27; The shepherds hurried to see baby Jesus and praised God.</p>
+                <p class="text-ti">ማርያምን ዮሴፍን ናብ ቤትልሔም ተጓዕዙ። ኣብ ማሕደር ቦታ ስለ ዘይነበረ ህጻን ኢየሱስ ኣብ ከብቲ ተወልደ ኣብ መብልዕ ድማ ተቐምጠ። መላእኽቲ ንጓሶት ተራእዮም &#x27;ጽቡቕ ዜና! ሎሚ መድሓኒ ተወልደ!&#x27; በሉ። ጓሶት ንህጻን ኢየሱስ ክርእዩ ተቐላጠፉ ንኣምላኽ ድማ ኣመስገኑ።</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">Jesus came to earth as a gift of love for all people.</p>
+                <p class="moral-ti">ኢየሱስ ንኹሎም ሰባት ከም ህያብ ፍቕሪ ናብ ምድሪ መጸ።</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">Mark 4:37-39</div>
+            <div class="page-number">Page 2</div>
+            <h1 class="title-en">Jesus Calms the Storm</h1>
+            <h2 class="title-ti">ኢየሱስ ማዕበል የህድእ</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <path d="M100.0,105.0 Q150.0,130.0 200.0,105.0 L190.0,90.0 L110.0,90.0 Z" fill="#8B4513" stroke="#5C3317" stroke-width="2"/>
+    <line x1="150.0" y1="90.0" x2="150.0" y2="45.0" stroke="#5C3317" stroke-width="3"/>
+    <polygon points="150.0,45.0 180.0,70.0 150.0,80.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <path d="M70.0,125.0 Q90.0,115.0 110.0,125.0 Q130.0,135.0 150.0,125.0 Q170.0,115.0 190.0,125.0 Q210.0,135.0 230.0,125.0" fill="none" stroke="#4169E1" stroke-width="3"/>
+    <path d="M80.0,135.0 Q100.0,125.0 120.0,135.0 Q140.0,145.0 160.0,135.0 Q180.0,125.0 200.0,135.0 Q220.0,145.0 240.0,135.0" fill="none" stroke="#1E90FF" stroke-width="2"/>
+    <path d="M110.0,50.0 L115.0,60.0" stroke="#FFD700" stroke-width="2"/>
+    <path d="M180.0,45.0 L185.0,55.0" stroke="#FFD700" stroke-width="2"/>
+    <path d="M90.0,60.0 L95.0,70.0" stroke="#FFD700" stroke-width="2"/>
+    <path d="M200.0,55.0 L205.0,65.0" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="110.0" cy="45.0" r="4.0" fill="#B0C4DE" opacity="0.6"/>
+    <circle cx="190.0" cy="50.0" r="5.0" fill="#B0C4DE" opacity="0.6"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">Jesus and His disciples were in a boat when a terrible storm came. The disciples were very afraid. But Jesus was sleeping peacefully! They woke Him up saying, &#x27;Don&#x27;t you care if we drown?&#x27; Jesus stood up and said to the storm, &#x27;Peace, be still!&#x27; The storm stopped immediately.</p>
+                <p class="text-ti">ኢየሱስን ደቀ መዛሙርቱን ኣብ ጃልባ ከለዉ ዘፍርሕ ማዕበል መጸ። ደቀ መዛሙርቱ ኣዝዮም ፈርሑ። ኢየሱስ ግን ብሰላም ደቂሱ ነበረ! ኣተንሲኦም &#x27;ክንጥሕል ኣየገድሰካን ድዩ?&#x27; በሉ። ኢየሱስ ተንሲኡ ንማዕበል &#x27;ስቕ ህድኡ!&#x27; በላ። ማዕበል ሽዑ ንሽዑ ደው በለ።</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">Jesus has power over everything. We don&#x27;t need to be afraid.</p>
+                <p class="moral-ti">ኢየሱስ ኣብ ልዕሊ ኩሉ ስልጣን ኣለዎ። ክንፈርሕ ኣየድልየናን።</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">John 6:9-13</div>
+            <div class="page-number">Page 3</div>
+            <h1 class="title-en">Jesus Feeds 5000 People</h1>
+            <h2 class="title-ti">ኢየሱስ 5000 ሰባት ይምግብ</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <path d="M110.0,110.0 Q105.0,140.0 150.0,145.0 Q195.0,140.0 190.0,110.0" fill="#DAA520" stroke="#8B4513" stroke-width="2"/>
+    <line x1="110.0" y1="110.0" x2="190.0" y2="110.0" stroke="#8B4513" stroke-width="2"/>
+    <path d="M115.0,115.0 L120.0,120.0 L125.0,115.0" stroke="#8B4513" stroke-width="1" fill="none"/>
+    <path d="M130.0,115.0 L135.0,120.0 L140.0,115.0" stroke="#8B4513" stroke-width="1" fill="none"/>
+    <ellipse cx="135.0" cy="100.0" rx="20.0" ry="8.0" fill="#F5DEB3" stroke="#D2B48C" stroke-width="1"/>
+    <ellipse cx="160.0" cy="95.0" rx="18.0" ry="7.0" fill="#F5DEB3" stroke="#D2B48C" stroke-width="1"/>
+    <ellipse cx="150.0" cy="88.0" rx="16.0" ry="6.0" fill="#F5DEB3" stroke="#D2B48C" stroke-width="1"/>
+    <path d="M165.0,80.0 Q180.0,70.0 190.0,80.0 Q185.0,85.0 175.0,85.0 Z" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <circle cx="182.0" cy="78.0" r="2.0" fill="#333"/>
+    <polygon points="190.0,80.0 198.0,75.0 198.0,85.0" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <path d="M125.0,75.0 Q140.0,65.0 150.0,75.0 Q145.0,80.0 135.0,80.0 Z" fill="#6495ED" stroke="#4682B4" stroke-width="1"/>
+    <circle cx="138.0" cy="73.0" r="2.0" fill="#333"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">A huge crowd followed Jesus. They were hungry but there was no food except one boy&#x27;s lunch - five small loaves of bread and two fish. Jesus blessed the food and began sharing it. Miraculously, everyone ate until they were full, and there were twelve baskets of leftovers!</p>
+                <p class="text-ti">ብዙሕ ህዝቢ ንኢየሱስ ሰዓበ። ጠምዮም ነበሩ ግን ካብ ቀረብ ሓደ ቆልዓ - ሓሙሽተ ንኡሽተይ ባንን ክልተ ዓሳን - ካልእ ምግቢ ኣይነበረን። ኢየሱስ ንምግቢ ባሪኹ ከማቕል ጀመረ። ብተኣምር ኩሎም ክሳብ ዝጸግቡ በልዑ ዓሰርተ ክልተ ቅርጫት ተረፍ ድማ ነበረ!</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">When we give what we have to Jesus, He can do amazing things.</p>
+                <p class="moral-ti">ዘሎና ንኢየሱስ ክንህብ ከለና ኣደናቒ ነገራት ክገብር ይኽእል።</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">Luke 10:30-37</div>
+            <div class="page-number">Page 4</div>
+            <h1 class="title-en">The Good Samaritan</h1>
+            <h2 class="title-ti">እቲ ሕያዋይ ሳምራዊ</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <circle cx="150.0" cy="55.0" r="12.0" fill="#FDBCB4"/>
+    <rect x="142.0" y="67.0" width="16.0" height="30.0" fill="#8B4513"/>
+    <line x1="150.0" y1="97.0" x2="142.0" y2="125.0" stroke="#8B4513" stroke-width="3"/>
+    <line x1="150.0" y1="97.0" x2="158.0" y2="125.0" stroke="#8B4513" stroke-width="3"/>
+    <line x1="158.0" y1="75.0" x2="180.0" y2="60.0" stroke="#FDBCB4" stroke-width="2.5"/>
+    <line x1="142.0" y1="75.0" x2="130.0" y2="90.0" stroke="#FDBCB4" stroke-width="2.5"/>
+    <rect x="128.0" y="85.0" width="5.0" height="40.0" fill="#DAA520" stroke="#8B4513" stroke-width="1"/>
+    <ellipse cx="175.0" cy="55.0" rx="18.0" ry="12.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <circle cx="185.0" cy="50.0" r="7.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <circle cx="188.0" cy="48.0" r="2.0" fill="#333"/>
+    <line x1="165.0" y1="62.0" x2="162.0" y2="70.0" stroke="#CCC" stroke-width="2"/>
+    <line x1="185.0" y1="62.0" x2="188.0" y2="70.0" stroke="#CCC" stroke-width="2"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">Jesus told a story about a man who was attacked by robbers and left hurt on the road. Two religious men walked by without helping. But a Samaritan man stopped, bandaged his wounds, and took care of him. Jesus said, &#x27;Go and be like the Samaritan - help everyone who needs help.&#x27;</p>
+                <p class="text-ti">ኢየሱስ ብሰረቕቲ ተወቒዑ ኣብ መንገዲ ዝተሓድገ ሰብ ዛንታ ነገረ። ክልተ ሃይማኖተኛታት ከይሓገዙ ሓለፉ። ሓደ ሳምራዊ ሰብ ግን ደው ኢሉ ቁስሉ ኣሰረ ተኸናኸኖ ድማ። ኢየሱስ &#x27;ከምቲ ሳምራዊ ኩን - ሓገዝ ንዘድልዮ ኩሉ ሓግዝ&#x27; በለ።</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">Love your neighbor and help anyone in need.</p>
+                <p class="moral-ti">ንብጻይካ ፍተዎ ሓገዝ ንዘድልዮ ኩሉ ሓግዝ።</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">Mark 10:13-16</div>
+            <div class="page-number">Page 5</div>
+            <h1 class="title-en">Jesus Loves the Children</h1>
+            <h2 class="title-ti">ኢየሱስ ንቈልዑ ይፈትዎም</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <circle cx="150.0" cy="55.0" r="12.0" fill="#FDBCB4"/>
+    <rect x="142.0" y="67.0" width="16.0" height="30.0" fill="#8B4513"/>
+    <line x1="150.0" y1="97.0" x2="142.0" y2="125.0" stroke="#8B4513" stroke-width="3"/>
+    <line x1="150.0" y1="97.0" x2="158.0" y2="125.0" stroke="#8B4513" stroke-width="3"/>
+    <line x1="158.0" y1="75.0" x2="180.0" y2="60.0" stroke="#FDBCB4" stroke-width="2.5"/>
+    <line x1="142.0" y1="75.0" x2="130.0" y2="90.0" stroke="#FDBCB4" stroke-width="2.5"/>
+    <rect x="128.0" y="85.0" width="5.0" height="40.0" fill="#DAA520" stroke="#8B4513" stroke-width="1"/>
+    <ellipse cx="175.0" cy="55.0" rx="18.0" ry="12.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <circle cx="185.0" cy="50.0" r="7.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <circle cx="188.0" cy="48.0" r="2.0" fill="#333"/>
+    <line x1="165.0" y1="62.0" x2="162.0" y2="70.0" stroke="#CCC" stroke-width="2"/>
+    <line x1="185.0" y1="62.0" x2="188.0" y2="70.0" stroke="#CCC" stroke-width="2"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">People brought their children to Jesus for a blessing. The disciples tried to send them away. But Jesus said, &#x27;Let the little children come to me! Don&#x27;t stop them! The kingdom of God belongs to those who are like these children.&#x27; Jesus hugged the children and blessed them.</p>
+                <p class="text-ti">ሰባት ንቈልዑኦም ኢየሱስ ክባርኾም ኣምጽእዎም። ደቀ መዛሙርቲ ክሰዱዎም ፈተኑ። ኢየሱስ ግን &#x27;ንቈልዑ ናባይ ክመጽኡ ሕደጉዎም! ኣይትኸልክሉዎም! መንግስቲ ኣምላኽ ከምዞም ቈልዑ ንዝኾኑ እያ&#x27; በለ። ኢየሱስ ንቈልዑ ሓቚፉ ባረኾም።</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">Jesus loves children. Everyone is important to God.</p>
+                <p class="moral-ti">ኢየሱስ ንቈልዑ ይፈትዎም። ኩሉ ሰብ ኣብ ቅድሚ ኣምላኽ ኣገዳሲ እዩ።</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">Luke 15:3-7</div>
+            <div class="page-number">Page 6</div>
+            <h1 class="title-en">The Lost Sheep</h1>
+            <h2 class="title-ti">እታ ዝጠፍአት በጊዕ</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <circle cx="150.0" cy="55.0" r="12.0" fill="#FDBCB4"/>
+    <rect x="142.0" y="67.0" width="16.0" height="30.0" fill="#8B4513"/>
+    <line x1="150.0" y1="97.0" x2="142.0" y2="125.0" stroke="#8B4513" stroke-width="3"/>
+    <line x1="150.0" y1="97.0" x2="158.0" y2="125.0" stroke="#8B4513" stroke-width="3"/>
+    <line x1="158.0" y1="75.0" x2="180.0" y2="60.0" stroke="#FDBCB4" stroke-width="2.5"/>
+    <line x1="142.0" y1="75.0" x2="130.0" y2="90.0" stroke="#FDBCB4" stroke-width="2.5"/>
+    <rect x="128.0" y="85.0" width="5.0" height="40.0" fill="#DAA520" stroke="#8B4513" stroke-width="1"/>
+    <ellipse cx="175.0" cy="55.0" rx="18.0" ry="12.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <circle cx="185.0" cy="50.0" r="7.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <circle cx="188.0" cy="48.0" r="2.0" fill="#333"/>
+    <line x1="165.0" y1="62.0" x2="162.0" y2="70.0" stroke="#CCC" stroke-width="2"/>
+    <line x1="185.0" y1="62.0" x2="188.0" y2="70.0" stroke="#CCC" stroke-width="2"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">Jesus told this story: A shepherd had 100 sheep. One sheep got lost. The shepherd left the 99 safe sheep and searched everywhere for the lost one. When he found it, he was so happy! He carried it home on his shoulders. Jesus said, &#x27;God rejoices like this when one lost person comes back to Him.&#x27;</p>
+                <p class="text-ti">ኢየሱስ ከምዚ ዛንታ ነገረ፡ ሓደ ጓሳ 100 ኣባጊዕ ነበሮ። ሓንቲ በጊዕ ጠፍአት። ጓሳ ነተን 99 ድሕንቲ ሓዲጉ ነታ ዝጠፍአት ኣብ ኩሉ ቦታ ደለያ። ምስ ረኸባ ኣዝዩ ተሓጐሰ! ኣብ መንኵቡ ጸዊሩ ገዝኡ ተመልሰ። ኢየሱስ &#x27;ሓደ ዝጠፍአ ሰብ ናብ ኣምላኽ ክምለስ ከሎ ኣምላኽ ከምዚ ይሕጐስ&#x27; በለ።</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">God loves each one of us and never gives up looking for us.</p>
+                <p class="moral-ti">ኣምላኽ ንነፍሲ ወከፍና ይፈትወናን ክደልየና ፈጺሙ ኣይሓድግን።</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">Matthew 14:25-31</div>
+            <div class="page-number">Page 7</div>
+            <h1 class="title-en">Jesus Walks on Water</h1>
+            <h2 class="title-ti">ኢየሱስ ኣብ ልዕሊ ማይ ይኸይድ</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <path d="M100.0,105.0 Q150.0,130.0 200.0,105.0 L190.0,90.0 L110.0,90.0 Z" fill="#8B4513" stroke="#5C3317" stroke-width="2"/>
+    <line x1="150.0" y1="90.0" x2="150.0" y2="45.0" stroke="#5C3317" stroke-width="3"/>
+    <polygon points="150.0,45.0 180.0,70.0 150.0,80.0" fill="#FFFFF0" stroke="#CCC" stroke-width="1"/>
+    <path d="M70.0,125.0 Q90.0,115.0 110.0,125.0 Q130.0,135.0 150.0,125.0 Q170.0,115.0 190.0,125.0 Q210.0,135.0 230.0,125.0" fill="none" stroke="#4169E1" stroke-width="3"/>
+    <path d="M80.0,135.0 Q100.0,125.0 120.0,135.0 Q140.0,145.0 160.0,135.0 Q180.0,125.0 200.0,135.0 Q220.0,145.0 240.0,135.0" fill="none" stroke="#1E90FF" stroke-width="2"/>
+    <path d="M110.0,50.0 L115.0,60.0" stroke="#FFD700" stroke-width="2"/>
+    <path d="M180.0,45.0 L185.0,55.0" stroke="#FFD700" stroke-width="2"/>
+    <path d="M90.0,60.0 L95.0,70.0" stroke="#FFD700" stroke-width="2"/>
+    <path d="M200.0,55.0 L205.0,65.0" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="110.0" cy="45.0" r="4.0" fill="#B0C4DE" opacity="0.6"/>
+    <circle cx="190.0" cy="50.0" r="5.0" fill="#B0C4DE" opacity="0.6"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">The disciples were in a boat at night when they saw Jesus walking on the water! Peter said, &#x27;Lord, if it is you, tell me to come.&#x27; Jesus said, &#x27;Come!&#x27; Peter walked on water toward Jesus! But when he looked at the waves, he was afraid and started to sink. Jesus caught him and said, &#x27;Why did you doubt?&#x27;</p>
+                <p class="text-ti">ደቀ መዛሙርቲ ብለይቲ ኣብ ጃልባ ከለዉ ኢየሱስ ኣብ ልዕሊ ማይ ክኸይድ ረኣዩ! ጴጥሮስ &#x27;ጐይታ ንስኻ እንተ ኴንካ ክመጽእ ንገረኒ&#x27; በለ። ኢየሱስ &#x27;ንዓ!&#x27; በለ። ጴጥሮስ ኣብ ልዕሊ ማይ ናብ ኢየሱስ ከደ! ግን ነቲ ማዕበል ምስ ረኣየ ፈሪሑ ክጥሕል ጀመረ። ኢየሱስ ሒዙ &#x27;ስለምንታይ ተጠራጢርካ?&#x27; በሎ።</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">Keep your eyes on Jesus and trust Him, not your fears.</p>
+                <p class="moral-ti">ኣዒንትኻ ኣብ ኢየሱስ ኣንብር ንፍርሕኻ ዘይኮነ ንእኡ ኣምን።</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page story-page">
+        <div class="decorative-border">
+            <div class="verse-ref">Luke 24:1-6</div>
+            <div class="page-number">Page 8</div>
+            <h1 class="title-en">Jesus Dies and Rises Again</h1>
+            <h2 class="title-ti">ኢየሱስ ይመውትን ይትንስእን</h2>
+            <div class="illustration"><svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#FFFFF8" rx="10"/>
+    <ellipse cx="150.0" cy="140.0" rx="90.0" ry="25.0" fill="#8B7355"/>
+    <circle cx="150.0" cy="140.0" r="60.0" fill="#FFD700" opacity="0.2"/>
+    <circle cx="150.0" cy="140.0" r="45.0" fill="#FFA500" opacity="0.15"/>
+    <rect x="146.0" y="50.0" width="8.0" height="70.0" fill="#5C3317"/>
+    <rect x="130.0" y="65.0" width="40.0" height="8.0" fill="#5C3317"/>
+    <rect x="97.0" y="70.0" width="6.0" height="50.0" fill="#5C3317"/>
+    <rect x="85.0" y="82.0" width="30.0" height="6.0" fill="#5C3317"/>
+    <rect x="197.0" y="70.0" width="6.0" height="50.0" fill="#5C3317"/>
+    <rect x="185.0" y="82.0" width="30.0" height="6.0" fill="#5C3317"/>
+    <line x1="70.0" y1="150.0" x2="230.0" y2="150.0" stroke="#8B7355" stroke-width="2"/>
+    </svg></div>
+            <div class="story-text">
+                <p class="text-en">Jesus died on the cross to save us from our sins. His friends were very sad and placed His body in a tomb. But on the third day, something amazing happened! The tomb was empty! An angel said, &#x27;He is not here! He is risen!&#x27; Jesus was alive again! This is the best news ever!</p>
+                <p class="text-ti">ኢየሱስ ካብ ሓጢኣትና ከድሕነና ኣብ መስቀል ሞተ። ኣዕሩኹ ኣዝዮም ሓዘኑ ስርዓቱ ኣብ መቓብር ኣቐምጡ። ግን ኣብ ሳልሳይ መዓልቲ ኣደናቒ ነገር ኰነ! መቓብር ጥራያ ነበረት! መልኣኽ &#x27;ኣብዚ የለን! ተንሲኡ!&#x27; በለ። ኢየሱስ ከም ብሓዲሽ ህያው ነበረ! እዚ ኩሉ ጊዜ ዝበለጸ ዜና እዩ!</p>
+            </div>
+            <div class="moral-box">
+                <div class="moral-label">Lesson / ትምህርቲ</div>
+                <p class="moral-en">Jesus conquered death and gives us eternal life.</p>
+                <p class="moral-ti">ኢየሱስ ንሞት ሰዐረ ዘልኣለማዊ ህይወት ድማ ይህበና።</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
