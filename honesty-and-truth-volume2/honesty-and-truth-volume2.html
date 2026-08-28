@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honesty & Truth - Volume 2: Bible Stories with Moral Lessons</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #1a1a2e;
+            color: #333;
+        }
+        
+        @page { size: A4; margin: 0; }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            page-break-after: always;
+            break-after: page;
+            position: relative;
+            overflow: hidden;
+        }
+        @media print {
+            body { background: #fff; }
+            .page { margin: 0; box-shadow: none; }
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 30%, #1565c0 60%, #0d47a1 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 8px solid #ffd700;
+            outline: 4px solid #ff6f00;
+            outline-offset: -12px;
+        }
+        
+        .cover-page h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8em;
+            color: #4caf50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .cover-page h2 {
+            font-size: 1.8em;
+            color: #ff9800;
+            margin-bottom: 5px;
+        }
+        
+        .cover-page h3 {
+            font-size: 1.6em;
+            color: #e91e63;
+            margin-bottom: 30px;
+        }
+        
+        .cover-page .subtitle {
+            color: #fff;
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+        
+        .cover-page .age-tag {
+            margin-top: 30px;
+            padding: 10px 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            color: #fff;
+            font-size: 1em;
+            border: 2px solid #ffd700;
+        }
+        
+        .cover-emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        /* Story Pages */
+        .story-page {
+            border: 4px solid;
+            border-radius: 15px;
+            padding: 35px;
+        }
+        
+        .story-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+        
+        /* Color themes for stories */
+        .theme-red { border-color: #e53935; }
+        .theme-red::before { background: linear-gradient(90deg, #e53935, #ff7043); }
+        .theme-red .story-title { color: #c62828; }
+        
+        .theme-blue { border-color: #1565c0; }
+        .theme-blue::before { background: linear-gradient(90deg, #1565c0, #42a5f5); }
+        .theme-blue .story-title { color: #0d47a1; }
+        
+        .theme-green { border-color: #2e7d32; }
+        .theme-green::before { background: linear-gradient(90deg, #2e7d32, #66bb6a); }
+        .theme-green .story-title { color: #1b5e20; }
+        
+        .theme-purple { border-color: #6a1b9a; }
+        .theme-purple::before { background: linear-gradient(90deg, #6a1b9a, #ab47bc); }
+        .theme-purple .story-title { color: #4a148c; }
+        
+        .theme-orange { border-color: #e65100; }
+        .theme-orange::before { background: linear-gradient(90deg, #e65100, #ff9800); }
+        .theme-orange .story-title { color: #bf360c; }
+        
+        .theme-teal { border-color: #00695c; }
+        .theme-teal::before { background: linear-gradient(90deg, #00695c, #26a69a); }
+        .theme-teal .story-title { color: #004d40; }
+        
+        .theme-pink { border-color: #ad1457; }
+        .theme-pink::before { background: linear-gradient(90deg, #ad1457, #ec407a); }
+        .theme-pink .story-title { color: #880e4f; }
+        
+        .theme-indigo { border-color: #283593; }
+        .theme-indigo::before { background: linear-gradient(90deg, #283593, #5c6bc0); }
+        .theme-indigo .story-title { color: #1a237e; }
+        
+        .theme-amber { border-color: #ff8f00; }
+        .theme-amber::before { background: linear-gradient(90deg, #ff8f00, #ffc107); }
+        .theme-amber .story-title { color: #e65100; }
+        
+        .theme-cyan { border-color: #00838f; }
+        .theme-cyan::before { background: linear-gradient(90deg, #00838f, #00bcd4); }
+        .theme-cyan .story-title { color: #006064; }
+        
+        .bible-ref {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .story-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        
+        .story-title-alt {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .story-illustration {
+            text-align: center;
+            font-size: 5em;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e8f5e9);
+            border-radius: 15px;
+        }
+        
+        .story-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin: 15px 0;
+            text-align: justify;
+        }
+        
+        .tigrinya-text {
+            font-size: 1em;
+            line-height: 1.8;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tigrinya-text::before {
+            content: 'ትግርኛ: ';
+            font-weight: 700;
+            color: #e65100;
+        }
+        
+        .amharic-text {
+            font-size: 1em;
+            line-height: 1.8;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .amharic-text::before {
+            content: 'አማርኛ: ';
+            font-weight: 700;
+            color: #2e7d32;
+        }
+        
+        .lesson-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f3e5f5, #ede7f6);
+            border-radius: 12px;
+            border: 2px solid #9c27b0;
+        }
+        
+        .lesson-box h4 {
+            color: #6a1b9a;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .lesson-box .lesson-english {
+            font-style: italic;
+            font-size: 1.1em;
+            color: #4a148c;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .lesson-box .lesson-tigrinya {
+            color: #6a1b9a;
+            margin-bottom: 3px;
+        }
+        
+        .lesson-box .lesson-amharic {
+            color: #6a1b9a;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        .scene-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-right: 10px;
+        }
+        
+        .story-divider {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.5em;
+            color: #ccc;
+        }
+        
+        .toc-page {
+            padding: 40px;
+        }
+        
+        .toc-page h2 {
+            font-family: 'Merriweather', serif;
+            color: #1a237e;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px dashed #ddd;
+            font-size: 1em;
+        }
+        
+        .toc-item:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .toc-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 700;
+            font-size: 0.8em;
+            margin-right: 12px;
+        }
+        
+        .toc-emoji {
+            margin-right: 8px;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== COVER PAGE ==================== -->
+<div class="page cover-page">
+    <div class="cover-emoji">📖✨</div>
+    <h1>Honesty & Truth</h1>
+    <h2>ቅንዕናን ሓቅን</h2>
+    <h3>ታማኝነትና እውነት</h3>
+    <p class="subtitle">Bible Stories with Moral Lessons — Volume 2</p>
+    <p class="subtitle">ዛንታታት መጽሓፍ ቅዱስ ምስ ትምህርቲ — ቅጽ 2</p>
+    <p class="subtitle">ሥነ ምግባራዊ ትምህርት ያላቸው የመጽሐፍ ቅዱስ ታሪኮች — ቅጽ 2</p>
+    <div class="age-tag">Trilingual: English • ትግርኛ • አማርኛ | Ages 6-19</div>
+</div>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<div class="page toc-page">
+    <h2>📚 Table of Contents / ዝርዝር ትሕዝቶ / ማውጫ</h2>
+    <div class="toc-item"><span><span class="toc-number">1</span><span class="toc-emoji">🌊</span>Moses Parts the Red Sea / ሙሴ ቀይሕ ባሕሪ ይፈልጥ</span></div>
+    <div class="toc-item"><span><span class="toc-number">2</span><span class="toc-emoji">🤝</span>Joseph Forgives His Brothers / ዮሴፍ ንኣሕዋቱ ይቕረ ይብል</span></div>
+    <div class="toc-item"><span><span class="toc-number">3</span><span class="toc-emoji">💕</span>Ruth's Loyalty / ታኣማንነት ሩት</span></div>
+    <div class="toc-item"><span><span class="toc-number">4</span><span class="toc-emoji">🐋</span>Jonah and the Big Fish / ዮናስን ዓቢ ዓሳን</span></div>
+    <div class="toc-item"><span><span class="toc-number">5</span><span class="toc-emoji">🏠</span>The Prodigal Son / ጥፉእ ወዲ</span></div>
+    <div class="toc-item"><span><span class="toc-number">6</span><span class="toc-emoji">🐦</span>Elijah and the Ravens / ኤልያስን ኳዃትን</span></div>
+    <div class="toc-item"><span><span class="toc-number">7</span><span class="toc-emoji">🏗️</span>The Wise and Foolish Builders / ጥበበኛን ዓሻን ሃነጽቲ</span></div>
+    <div class="toc-item"><span><span class="toc-number">8</span><span class="toc-emoji">🌳</span>Zacchaeus Meets Jesus / ዘኬዎስ ንኢየሱስ ይረክብ</span></div>
+    <div class="toc-item"><span><span class="toc-number">9</span><span class="toc-emoji">👑</span>Esther Saves Her People / ኣስቴር ንህዝባ ተድሕን</span></div>
+    <div class="toc-item"><span><span class="toc-number">10</span><span class="toc-emoji">💰</span>The Widow's Offering / መባእ መበለት</span></div>
+    <div class="toc-item"><span><span class="toc-number">11</span><span class="toc-emoji">🎺</span>Gideon's Small Army / ንእሽቶ ሰራዊት ጊድዮን</span></div>
+    <div class="toc-item"><span><span class="toc-number">12</span><span class="toc-emoji">🫗</span>Jesus Washes the Disciples' Feet / ኢየሱስ ኣእጋር ደቀ መዛሙርቱ ይሕጸብ</span></div>
+    <div class="toc-item"><span><span class="toc-number">13</span><span class="toc-emoji">👂</span>Samuel Hears God's Voice / ሳሙኤል ድምጺ ኣምላኽ ይሰምዕ</span></div>
+    <div class="toc-item"><span><span class="toc-number">14</span><span class="toc-emoji">🗼</span>The Tower of Babel / ግምቢ ባቤል</span></div>
+    <div class="toc-item"><span><span class="toc-number">15</span><span class="toc-emoji">🚶‍♂️</span>Jesus Walks on Water / ኢየሱስ ኣብ ልዕሊ ማይ ይኸይድ</span></div>
+    <div class="toc-item"><span><span class="toc-number">16</span><span class="toc-emoji">🔥</span>Shadrach, Meshach & Abednego / ሻድራቕ ሜሻቕ ኣብድኒጎ</span></div>
+    <div class="toc-item"><span><span class="toc-number">17</span><span class="toc-emoji">💎</span>The Talents / ህያባት</span></div>
+    <div class="toc-item"><span><span class="toc-number">18</span><span class="toc-emoji">🧱</span>Nehemiah Rebuilds the Wall / ነህምያ ንመንደቕ ይሃንጽ</span></div>
+    <div class="toc-item"><span><span class="toc-number">19</span><span class="toc-emoji">🌱</span>The Mustard Seed / ፍረ ኣድሪ</span></div>
+    <div class="toc-item"><span><span class="toc-number">20</span><span class="toc-emoji">🎵</span>Mary's Song of Praise / መዝሙር ውዳሰ ማርያም</span></div>
+</div>
+
+<!-- ==================== STORY 1: MOSES PARTS THE RED SEA ==================== -->
+<!-- Scene 1 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:1-31</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🌊🏃‍♂️⛰️</div>
+    <p class="story-text"><span class="scene-number">1</span>The people of Israel had been slaves in Egypt for over 400 years. They cried out to God for help. God heard their prayers and sent Moses to set them free. Pharaoh finally let them go after God sent ten plagues upon Egypt.</p>
+    <div class="tigrinya-text">ህዝቢ እስራኤል ልዕሊ 400 ዓመት ኣብ ግብጺ ባሮት ነበሩ። ንኣምላኽ ሓገዝ ጠየቑ። ኣምላኽ ጸሎቶም ሰሚዑ ንሙሴ ከገላግሎም ለኣኸ። ኣምላኽ ዓሰርተ መቕዘፍቲ ድሕሪ ምልኣኽ ፈርኦን ክኸዱ ሓደገ።</div>
+    <div class="amharic-text">የእስራኤል ሕዝብ ከ400 ዓመት በላይ በግብጽ ባሪያ ነበሩ። ለእግዚአብሔር ለእርዳታ ጮሁ። እግዚአብሔር ጸሎታቸውን ሰምቶ ሙሴን ሊያስለቅቃቸው ላከ። እግዚአብሔር አስር መቅሰፍት ከላከ በኋላ ፈርዖን ሊሄዱ ፈቀደ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God hears our prayers even when we wait a long time.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ነዊሕ'ኳ ንጸበ ጸሎትና ይሰምዕ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ረጅም ጊዜ ብንጠብቅም ጸሎታችንን ይሰማል።</p>
+    </div>
+    <span class="page-number">Page 1</span>
+</div>
+
+<!-- Scene 2 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:5-9</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🐎⚔️😨</div>
+    <p class="story-text"><span class="scene-number">2</span>But Pharaoh changed his mind! He gathered his entire army with horses, chariots, and soldiers. They chased after the Israelites with fury. The people of Israel looked back and saw the dust clouds of the approaching army. Fear filled their hearts.</p>
+    <div class="tigrinya-text">ፈርኦን ግና ሓሳቡ ቀየረ! ምስ ኣፍራስ ሰረገላታትን ወተሃደራትን ኩሉ ሰራዊቱ ኣኪቡ ንእስራኤላውያን ብቁጥዓ ሰዓቦም። ህዝቢ እስራኤል ንድሕሪት ጠሚቶም ናይ ዝቐርብ ሰራዊት ደበና ኣቡኵ ረኣዩ። ፍርሒ ልቦም መልአ።</div>
+    <div class="amharic-text">ፈርዖን ግን ሐሳቡን ቀየረ! ፈረሶችን ሰረገሎችንና ወታደሮችን ሰራዊቱን ሁሉ አሰባስቦ እስራኤላውያንን በቁጣ አሳደዳቸው። የእስራኤል ሕዝብ ወደ ኋላ ተመልክተው የሚቀርበውን ሰራዊት አቧራ ደመና አዩ። ልባቸው በፍርሃት ተሞላ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Problems may chase us, but God is always ahead of us.</p>
+        <p class="lesson-tigrinya">ጸገማት ክስዕቡና ይኽእሉ ኣምላኽ ግና ኩሉ ግዜ ቅድሜና እዩ።</p>
+        <p class="lesson-amharic">ችግሮች ሊያሳድዱን ይችላሉ እግዚአብሔር ግን ሁልጊዜ ከፊታችን ነው።</p>
+    </div>
+    <span class="page-number">Page 2</span>
+</div>
+
+<!-- Scene 3 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:10-12</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">😰🙏🌊</div>
+    <p class="story-text"><span class="scene-number">3</span>The Israelites were trapped. Behind them was Pharaoh's army. In front of them was the great Red Sea. The people complained to Moses saying 'Did you bring us here to die? It would have been better to stay as slaves!' They were very afraid.</p>
+    <div class="tigrinya-text">እስራኤላውያን ተሓጽሩ። ብድሕሪኦም ሰራዊት ፈርኦን። ቅድሚኦም ዓባይ ቀይሕ ባሕሪ። ህዝቢ ኣብ ሙሴ ኣጉረምረሙ ኣብዚ ክንመውት ኢኻ ኣምጺእካና? ባሮት ኮይንና ምጽናሕ ምሓሸ! ብሓቂ ፈሪሖም ነበሩ።</div>
+    <div class="amharic-text">እስራኤላውያን ታጠሩ። ከኋላቸው የፈርዖን ሰራዊት። ከፊታቸው ታላቁ ቀይ ባሕር። ሕዝቡ ሙሴን አጉረመረሙ እዚህ ልንሞት ነው ያመጣኸን? ባሪያ ሆነን መቅረት ይሻለን ነበር! በጣም ፈርተው ነበር።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Fear makes us forget God's past faithfulness.</p>
+        <p class="lesson-tigrinya">ፍርሒ ዝሓለፈ ታኣማንነት ኣምላኽ ከም ንርስዕ ይገብር።</p>
+        <p class="lesson-amharic">ፍርሃት ያለፈውን የእግዚአብሔርን ታማኝነት እንድንረሳ ያደርገናል።</p>
+    </div>
+    <span class="page-number">Page 3</span>
+</div>
+
+<!-- Scene 4 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:13-14</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🙌💪✨</div>
+    <p class="story-text"><span class="scene-number">4</span>But Moses stood firm and said to the people: 'Do not be afraid! Stand still and watch God save you today. The Lord will fight for you. You only need to be quiet and trust.' Moses had courage because he trusted God completely.</p>
+    <div class="tigrinya-text">ሙሴ ግና ጸኒዑ ንህዝቢ ኣይትፍርሑ! ደው ኢልኩም ኣምላኽ ሎሚ ከም ዘድሕነኩም ርኣዩ። ጐይታ ንዓኹም ክዋጋእ እዩ። ንስኻትኩም ስቕ ኢልኩም ምእማን ጥራይ ኣድልየኩም በለ። ሙሴ ንኣምላኽ ብምሉእ ስለ ዝኣመነ ትብዓት ነበሮ።</div>
+    <div class="amharic-text">ሙሴ ግን ጸንቶ ለሕዝቡ አትፍሩ! ቁሙና እግዚአብሔር ዛሬ እንደሚያድናችሁ ተመልከቱ። ጌታ ስለ እናንተ ይዋጋል። ዝም ብላችሁ ማመን ብቻ ያስፈልጋችኋል አለ። ሙሴ እግዚአብሔርን ሙሉ በሙሉ ስላመነ ድፍረት ነበረው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">When we trust God, He gives us courage to stand firm.</p>
+        <p class="lesson-tigrinya">ንኣምላኽ ምስ ንኣምን ጸኒዕና ክንቆም ትብዓት ይህበና።</p>
+        <p class="lesson-amharic">እግዚአብሔርን ስናምን ጸንተን ለመቆም ድፍረት ይሰጠናል።</p>
+    </div>
+    <span class="page-number">Page 4</span>
+</div>
+
+<!-- Scene 5 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:15-16</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🖐️🪄🌊</div>
+    <p class="story-text"><span class="scene-number">5</span>God spoke to Moses: 'Why do you cry to me? Tell the people to move forward! Raise your staff and stretch your hand over the sea. I will divide the waters.' God was about to do something no one had ever seen before — the impossible!</p>
+    <div class="tigrinya-text">ኣምላኽ ንሙሴ ተዛረቦ ስለምንታይ ናባይ ትጠርዕ? ንህዝቢ ንቕድሚት ክኸዱ ንገሮም! በትርኻ ኣልዒልካ ኢድካ ኣብ ልዕሊ ባሕሪ ዘርግሕ። ንማያት ክፈልጦም እየ በለ። ኣምላኽ ዘይተራእየ ዘይከኣል ነገር ክገብር ይቐርብ ነበረ!</div>
+    <div class="amharic-text">እግዚአብሔር ሙሴን ተናገረው ለምን ወደ እኔ ትጮሃለህ? ሕዝቡን ወደ ፊት ይሂዱ በላቸው! በትርህን አንሳና እጅህን በባሕሩ ላይ ዘርጋ። ውሃውን እከፍላለሁ አለ። እግዚአብሔር ማንም ያላየውን የማይቻለውን ነገር ሊያደርግ ተቃርቦ ነበር!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God tells us to move forward in faith, not stand still in worry.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ብእምነት ንቕድሚት ክንከይድ ይነግረና ብጭንቀት ደው ኣይንበል።</p>
+        <p class="lesson-amharic">እግዚአብሔር በእምነት ወደ ፊት እንሂድ ይለናል በጭንቀት ቆመን አንቅር።</p>
+    </div>
+    <span class="page-number">Page 5</span>
+</div>
+
+<!-- Scene 6 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:19-20</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">☁️🔥🛡️</div>
+    <p class="story-text"><span class="scene-number">6</span>Then the angel of God and the pillar of cloud moved from the front of Israel to behind them. The cloud stood between Egypt's army and Israel. It brought darkness to the Egyptians but gave light to Israel all night long. God was their shield and protector.</p>
+    <div class="tigrinya-text">ሽዑ መልኣኽ ኣምላኽን ዓንዲ ደበናን ካብ ቅድሚ እስራኤል ናብ ድሕሪኦም ተንቀሳቐሱ። ደበና ኣብ መንጎ ሰራዊት ግብጽን እስራኤልን ደው በለ። ንግብጻውያን ጸልማት ንእስራኤል ግና ምሉእ ለይቲ ብርሃን ሃበ። ኣምላኽ ዋልታኦምን ሓላዊኦምን ነበረ።</div>
+    <div class="amharic-text">ከዚያም የእግዚአብሔር መልአክና የደመና ዓምድ ከእስራኤል ፊት ወደ ኋላቸው ተዛወሩ። ደመናው በግብጽ ሰራዊትና በእስራኤል መካከል ቆመ። ለግብጻውያን ጨለማ ለእስራኤል ግን ሌሊቱን ሙሉ ብርሃን ሰጠ። እግዚአብሔር ጋሻቸውና ጠባቂያቸው ነበር።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God places Himself between us and our enemies.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ኣብ መንጎና ኣብ መንጎ ጸላእትና ንርእሱ የቐምጥ።</p>
+        <p class="lesson-amharic">እግዚአብሔር በእኛና በጠላቶቻችን መካከል ራሱን ያስቀምጣል።</p>
+    </div>
+    <span class="page-number">Page 6</span>
+</div>
+
+<!-- Scene 7 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:21</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">💨🌊↔️🌊</div>
+    <p class="story-text"><span class="scene-number">7</span>Moses stretched out his hand over the sea. All night long, God sent a powerful east wind that pushed the waters back. The sea split into two great walls of water on the left and on the right! A path of dry ground appeared in the middle of the sea. It was a miracle!</p>
+    <div class="tigrinya-text">ሙሴ ኢዱ ኣብ ልዕሊ ባሕሪ ዘርግሐ። ምሉእ ለይቲ ኣምላኽ ሓያል ንፋስ ምብራቕ ልኢኹ ንማያት ድሕሪት ደፍኦ። ባሕሪ ኣብ ክልተ ዓበይቲ መናድቕ ማይ ብጸጋምን ብየማንን ተፈልጠ! ኣብ ማእከል ባሕሪ ንቑጽ ምድሪ መንገዲ ተረኽበ። ተኣምር ነበረ!</div>
+    <div class="amharic-text">ሙሴ እጁን በባሕሩ ላይ ዘረጋ። ሌሊቱን ሙሉ እግዚአብሔር ኃይለኛ የምስራቅ ነፋስ ልኮ ውሃውን ወደ ኋላ ገፋ። ባሕሩ በግራና በቀኝ ሁለት ታላላቅ የውሃ ግድግዳ ሆኖ ተከፈለ! በባሕሩ መሃል ደረቅ ምድር መንገድ ተገኘ። ተአምር ነበር!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God makes a way when there seems to be no way.</p>
+        <p class="lesson-tigrinya">ኣምላኽ መንገዲ ዘይርኣየሉ'ውን መንገዲ ይገብር።</p>
+        <p class="lesson-amharic">እግዚአብሔር መንገድ በማይታይበት ጊዜ መንገድ ያደርጋል።</p>
+    </div>
+    <span class="page-number">Page 7</span>
+</div>
+
+<!-- Scene 8 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:22</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">👨‍👩‍👧‍👦🚶‍♂️🚶‍♀️</div>
+    <p class="story-text"><span class="scene-number">8</span>The people of Israel walked through the sea on dry ground! Mothers held their children's hands. Fathers carried the little ones on their shoulders. Old men and women walked between walls of water rising high on both sides. Not one drop touched them. God kept them perfectly safe.</p>
+    <div class="tigrinya-text">ህዝቢ እስራኤል ብማእከል ባሕሪ ኣብ ንቑጽ ምድሪ ሓለፉ! ኣዴታት ኣእዳው ደቀን ሒዘን። ኣቦታት ንናእሽቱ ኣብ መንኩቦም ጸዊሮም። ኣረገውትን ኣረገውትን ኣብ ክልቲኡ ወገን ልዕል ዝበለ መናድቕ ማይ ኣብ መንጎ ከዱ። ሓንቲ ነጥቢ'ውን ኣይተንከፈቶምን። ኣምላኽ ብፍጹም ሓለዎም።</div>
+    <div class="amharic-text">የእስራኤል ሕዝብ በባሕሩ መሃል በደረቅ ምድር ላይ ሄዱ! እናቶች የልጆቻቸውን እጅ ያዙ። አባቶች ትንንሾቹን በትከሻቸው ተሸከሙ። አረጋውያን ወንዶችና ሴቶች በሁለቱም ወገን ከፍ ባለ የውሃ ግድግዳ መካከል ሄዱ። አንድ ጠብታ እንኳ አልነካቸውም። እግዚአብሔር በፍጹም ጠበቃቸው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God's protection covers every person — young and old.</p>
+        <p class="lesson-tigrinya">ሓለዋ ኣምላኽ ንኹሉ ሰብ ይሽፍን — ንናእሽቱን ንዓበይትን።</p>
+        <p class="lesson-amharic">የእግዚአብሔር ጥበቃ ሁሉንም ሰው ይሸፍናል — ታናሹንም ታላላቆቹንም።</p>
+    </div>
+    <span class="page-number">Page 8</span>
+</div>
+
+<!-- Scene 9 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:23-25</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🐎💥🌀</div>
+    <p class="story-text"><span class="scene-number">9</span>Pharaoh's army foolishly chased Israel into the sea. But God looked down from the pillar of fire and confused the Egyptian army. Their chariot wheels fell off and got stuck in the mud. The soldiers cried out 'Let us flee! The Lord is fighting for Israel against us!'</p>
+    <div class="tigrinya-text">ሰራዊት ፈርኦን ብዕሽነት ንእስራኤል ናብ ባሕሪ ሰዓቦም። ኣምላኽ ግና ካብ ዓንዲ ሓዊ ጠሚቱ ንሰራዊት ግብጺ ኣደንገረ። መንኰረ ሰረገላኦም ወዲቑ ኣብ ጭቃ ተሸኺሉ። ወተሃደራት ንህደም! ጐይታ ንእስራኤል ኣንጻርና ይዋጋእ ኣሎ! ኢሎም ጨርሑ።</div>
+    <div class="amharic-text">የፈርዖን ሰራዊት በሞኝነት እስራኤልን ወደ ባሕሩ ተከተሉ። እግዚአብሔር ግን ከእሳት ዓምድ ተመልክቶ የግብጽን ሰራዊት አምታታ። የሰረገላ ጎማዎቻቸው ወድቆ በጭቃ ተጣበቀ። ወታደሮች እንሸሽ! ጌታ ለእስራኤል በእኛ ላይ ይዋጋል! ብለው ጮሁ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Those who fight against God's people will not succeed.</p>
+        <p class="lesson-tigrinya">ኣብ ልዕሊ ህዝቢ ኣምላኽ ዝዋግኡ ኣይዕወቱን።</p>
+        <p class="lesson-amharic">በእግዚአብሔር ሕዝብ ላይ የሚዋጉ አይሳካላቸውም።</p>
+    </div>
+    <span class="page-number">Page 9</span>
+</div>
+
+<!-- Scene 10 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:26-28</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🌊💥🌊</div>
+    <p class="story-text"><span class="scene-number">10</span>God told Moses to stretch his hand over the sea again. The walls of water crashed down upon the Egyptian army! The mighty chariots and horses and soldiers were all swallowed by the returning waters. Not one of them survived. God had completely defeated Israel's enemy.</p>
+    <div class="tigrinya-text">ኣምላኽ ንሙሴ ኢዱ ኣብ ልዕሊ ባሕሪ ከም ብሓድሽ ክዝርግሕ ነገሮ። መናድቕ ማይ ኣብ ልዕሊ ሰራዊት ግብጺ ፈረሰ! ሓያላት ሰረገላታትን ኣፍራስን ወተሃደራትን ኩሎም ብዝተመልሰ ማይ ተዋሓጡ። ሓደ'ኳ ኣይደሓነን። ኣምላኽ ንጸላኢ እስራኤል ብምሉእ ሰዓረ።</div>
+    <div class="amharic-text">እግዚአብሔር ሙሴን እጁን በባሕሩ ላይ እንደገና ይዘርጋ አለው። የውሃ ግድግዳዎች በግብጽ ሰራዊት ላይ ፈረሱ! ኃይለኛ ሰረገሎችና ፈረሶችና ወታደሮች ሁሉ በተመለሰው ውሃ ተዋጡ። አንዱም አልተረፈም። እግዚአብሔር የእስራኤልን ጠላት ሙሉ በሙሉ ድል አደረገ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God fights our battles and gives complete victory.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ውግኣትና ይዋጋእ ምሉእ ዓወት ድማ ይህብ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ጦርነታችንን ይዋጋል ሙሉ ድልም ይሰጣል።</p>
+    </div>
+    <span class="page-number">Page 10</span>
+</div>
+
+<!-- Scene 11 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 14:30-31</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🎉🙏✨</div>
+    <p class="story-text"><span class="scene-number">11</span>That day, the Lord saved Israel from the hand of Egypt. The people saw the great power of God and they believed in the Lord and in His servant Moses. What was impossible for man was easy for God! Their fear turned to faith and their cries turned to songs of praise.</p>
+    <div class="tigrinya-text">በዛ መዓልቲ ጐይታ ንእስራኤል ካብ ኢድ ግብጺ ኣድሓነ። ህዝቢ ዓቢ ሓይሊ ኣምላኽ ረኣዩ ብጐይታን ብኣገልጋሊኡ ሙሴን ኣመኑ። ንሰብ ዘይከኣል ንኣምላኽ ቀሊል ነበረ! ፍርሖም ናብ እምነት ብኽያቶም ናብ ውዳሰ ተቐየረ።</div>
+    <div class="amharic-text">በዚያ ቀን ጌታ እስራኤልን ከግብጽ እጅ አዳነ። ሕዝቡ የእግዚአብሔርን ታላቅ ኃይል አይተው በጌታና በአገልጋዩ ሙሴ አመኑ። ለሰው የማይቻለው ለእግዚአብሔር ቀላል ነበር! ፍርሃታቸው ወደ እምነት ጩኸታቸው ወደ ምስጋና ዝማሬ ተለወጠ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">What is impossible for us is easy for God.</p>
+        <p class="lesson-tigrinya">ንዓና ዘይከኣል ንኣምላኽ ቀሊል እዩ።</p>
+        <p class="lesson-amharic">ለእኛ የማይቻለው ለእግዚአብሔር ቀላል ነው።</p>
+    </div>
+    <span class="page-number">Page 11</span>
+</div>
+
+<!-- Scene 12 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 15:1-2</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🎶🎵💃</div>
+    <p class="story-text"><span class="scene-number">12</span>Then Moses and all the people sang a beautiful song to God: 'I will sing to the Lord, for He has triumphed gloriously! The horse and rider He has thrown into the sea. The Lord is my strength and my song; He has become my salvation.' It was the greatest celebration of freedom!</p>
+    <div class="tigrinya-text">ሽዑ ሙሴን ኩሉ ህዝብን ጽቡቕ መዝሙር ንኣምላኽ ዘመሩ ንጐይታ ክዝምር እየ ብኽብሪ ዓዊቱ! ፈረስን ፈራስን ናብ ባሕሪ ደርብዩ። ጐይታ ሓይለይን መዝሙረይን ምድሓነይን ኮይኑ። ዝዓበየ ናይ ነጻነት ኣብዓል ነበረ!</div>
+    <div class="amharic-text">ከዚያም ሙሴና ሕዝቡ ሁሉ ለእግዚአብሔር ቆንጆ መዝሙር ዘመሩ ለጌታ እዘምራለሁ በክብር ድል አድርጓልና! ፈረስንና ፈረሰኛውን ወደ ባሕር ጣላቸው። ጌታ ኃይሌና መዝሙሬ ሆኗል ድነቴም ሆኗል። ታላቁ የነፃነት በዓል ነበር!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">After God delivers us, we should praise Him with joy!</p>
+        <p class="lesson-tigrinya">ኣምላኽ ድሕሪ ምድሓኑ ብሓጐስ ነመስግኖ!</p>
+        <p class="lesson-amharic">እግዚአብሔር ካዳነን በኋላ በደስታ ልናመሰግነው ይገባል!</p>
+    </div>
+    <span class="page-number">Page 12</span>
+</div>
+
+<!-- Scene 13 -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">Exodus 15:20-21</span>
+    <h2 class="story-title">Moses Parts the Red Sea</h2>
+    <p class="story-title-alt">ሙሴ ቀይሕ ባሕሪ ይፈልጥ • ሙሴ ቀይ ባሕርን ከፈለ</p>
+    <div class="story-illustration">🪘👩‍🎤🕺</div>
+    <p class="story-text"><span class="scene-number">13</span>Miriam, the sister of Moses, took a tambourine in her hand. All the women followed her with tambourines and dancing. She sang: 'Sing to the Lord, for He has triumphed gloriously!' The whole community — men, women, and children — celebrated God's amazing rescue together.</p>
+    <div class="tigrinya-text">ሚርያም ሓፍቲ ሙሴ ኣብ ኢዳ ከበሮ ሓዘት። ኩለን ደቂ ኣንስትዮ ብከበሮን ብስዓስዕን ሰዓባኣ። ንጐይታ ዘምሩ ብኽብሪ ዓዊቱ! ኢላ ዘመረት። ኩሉ ማሕበር — ሰብኡትን ኣንስትን ቆልዑን — ብሓባር ዘደንቕ ምድሓን ኣምላኽ ኣብዓሉ።</div>
+    <div class="amharic-text">ሚርያም የሙሴ እህት ከበሮ በእጇ ያዘች። ሴቶች ሁሉ በከበሮና በዳንስ ተከተሏት። ለጌታ ዘምሩ በክብር ድል አድርጓልና! ብላ ዘመረች። ማህበረሰቡ ሁሉ — ወንዶችና ሴቶችና ልጆች — አብረው የእግዚአብሔርን አስደናቂ ማዳን አከበሩ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Everyone has a part to play in praising God.</p>
+        <p class="lesson-tigrinya">ኩሉ ሰብ ንኣምላኽ ኣብ ምውዳስ ግደ ኣለዎ።</p>
+        <p class="lesson-amharic">ሁሉም ሰው እግዚአብሔርን በማመስገን ድርሻ አለው።</p>
+    </div>
+    <span class="page-number">Page 13</span>
+</div>
+
+<!-- ==================== STORY 2: JOSEPH FORGIVES HIS BROTHERS ==================== -->
+<!-- Scene 1 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 37:3-4</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">👦🧥🌈</div>
+    <p class="story-text"><span class="scene-number">1</span>Jacob loved his son Joseph more than all his other sons. He gave Joseph a beautiful coat of many colors. When Joseph's brothers saw this, jealousy filled their hearts. They hated Joseph and could not speak a kind word to him.</p>
+    <div class="tigrinya-text">ያዕቆብ ንወዱ ዮሴፍ ካብ ኩሎም ደቁ ንላዕሊ ፈተዎ። ንዮሴፍ ጽቡቕ ብዙሕ ሕብሪ ዘለዎ ክዳን ሃቦ። ኣሕዋት ዮሴፍ ምስ ረኣዩ ቅንኢ ልቦም መልአ። ንዮሴፍ ጸልእዎ ሓንቲ ጽብቕቲ ቃል'ኳ ክዛረብዎ ኣይከኣሉን።</div>
+    <div class="amharic-text">ያዕቆብ ልጁን ዮሴፍን ከሌሎቹ ልጆቹ ሁሉ በላይ ወደደ። ለዮሴፍ ቆንጆ ባለብዙ ቀለም ልብስ ሰጠው። የዮሴፍ ወንድሞች ይህን ሲያዩ ቅናት ልባቸውን ሞላ። ዮሴፍን ጠሉት አንድ ደግ ቃል እንኳ ሊናገሩት አልቻሉም።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Jealousy poisons relationships and hardens the heart.</p>
+        <p class="lesson-tigrinya">ቅንኢ ንርክብ ይመርዝ ንልቢ ድማ የትርር።</p>
+        <p class="lesson-amharic">ቅናት ግንኙነትን ይመርዛል ልብንም ያደነድናል።</p>
+    </div>
+    <span class="page-number">Page 14</span>
+</div>
+
+<!-- Scene 2 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 37:23-28</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">😢⛓️🐪</div>
+    <p class="story-text"><span class="scene-number">2</span>One day, the brothers seized Joseph, stripped off his beautiful coat, and threw him into an empty pit. Then they sold him to traders heading to Egypt for twenty pieces of silver. Joseph was only seventeen years old, torn from his father and his home.</p>
+    <div class="tigrinya-text">ሓደ መዓልቲ ኣሕዋቱ ንዮሴፍ ሒዞም ጽቡቕ ክዳኑ ቐንጢጦም ኣብ ጥራይ ጒድጓድ ደርበይዎ። ድሕሪኡ ናብ ግብጺ ንዝኸዱ ነጋዶ ብዕስራ ብሩር ሸጥዎ። ዮሴፍ ዓሰርተ ሸውዓተ ዓመት ጥራይ ነበሮ ካብ ኣቡኡን ገዝኡን ተበታተነ።</div>
+    <div class="amharic-text">አንድ ቀን ወንድሞቹ ዮሴፍን ይዘው ቆንጆ ልብሱን ገፈው ወደ ባዶ ጉድጓድ ጣሉት። ከዚያም ወደ ግብጽ ለሚሄዱ ነጋዴዎች በሃያ ብር ሸጡት። ዮሴፍ አስራ ሰባት ዓመት ብቻ ነበረው ከአባቱና ከቤቱ ተለየ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Evil actions bring suffering, but God sees everything.</p>
+        <p class="lesson-tigrinya">ሕማቕ ተግባራት ስቓይ ይስዕብ ኣምላኽ ግና ኩሉ ይርኢ።</p>
+        <p class="lesson-amharic">ክፉ ተግባራት መከራ ያመጣሉ እግዚአብሔር ግን ሁሉን ያያል።</p>
+    </div>
+    <span class="page-number">Page 15</span>
+</div>
+
+<!-- Scene 3 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 39:2-4</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">🏛️⭐📈</div>
+    <p class="story-text"><span class="scene-number">3</span>In Egypt, Joseph became a slave in Potiphar's house. But the Lord was with Joseph and made everything he did successful. Potiphar saw God's blessing on Joseph and put him in charge of his entire household. Even in slavery, God was working His plan.</p>
+    <div class="tigrinya-text">ኣብ ግብጺ ዮሴፍ ኣብ ቤት ጶጢፋር ባርያ ኮነ። ጐይታ ግና ምስ ዮሴፍ ነበረ ዝገበሮ ኩሉ ኣሳልጠሉ። ጶጢፋር በረኸት ኣምላኽ ኣብ ዮሴፍ ረኣየ ኣብ ልዕሊ ኩሉ ገዝኡ ሓላፊ ገበሮ። ኣብ ባርነት'ውን ኣምላኽ መደቡ ይሰርሕ ነበረ።</div>
+    <div class="amharic-text">በግብጽ ዮሴፍ በጶጢፋር ቤት ባሪያ ሆነ። ጌታ ግን ከዮሴፍ ጋር ነበር ያደረገውን ሁሉ አሳካለት። ጶጢፋር የእግዚአብሔርን በረከት በዮሴፍ ላይ አይቶ በቤቱ ሁሉ ላይ ኃላፊ አደረገው። በባርነትም እንኳ እግዚአብሔር ዕቅዱን ይሰራ ነበር።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God is with us even in our hardest times.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ኣብ ዝኸበደ ግዜና'ውን ምሳና እዩ።</p>
+        <p class="lesson-amharic">እግዚአብሔር በከበደን ጊዜም ከእኛ ጋር ነው።</p>
+    </div>
+    <span class="page-number">Page 16</span>
+</div>
+
+<!-- Scene 4 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 39:20, 41:14-16</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">🔒😔👑</div>
+    <p class="story-text"><span class="scene-number">4</span>Joseph was falsely accused and thrown into prison. But even in prison, God gave him the ability to interpret dreams. After years of waiting, Pharaoh called Joseph to explain his own dreams. Joseph said 'I cannot do it, but God will give Pharaoh the answer.' Joseph always gave glory to God.</p>
+    <div class="tigrinya-text">ዮሴፍ ብሓሶት ተኸሲሱ ናብ ቤት ማእሰርቲ ተደርበየ። ኣብ ቤት ማእሰርቲ'ውን ኣምላኽ ሕልሚ ክትርጉም ክእለት ሃቦ። ድሕሪ ዓመታት ምጽባይ ፈርኦን ንዮሴፍ ሕልሙ ክገልጸሉ ጸውዖ። ዮሴፍ ኣነ ኣይክእልን ኣምላኽ ግና ንፈርኦን መልሲ ክህብ እዩ በለ። ዮሴፍ ኩሉ ግዜ ንኣምላኽ ክብሪ ይህብ ነበረ።</div>
+    <div class="amharic-text">ዮሴፍ በሐሰት ተከሰሰና ወደ እስር ቤት ተጣለ። በእስር ቤትም እንኳ እግዚአብሔር ሕልም የመተርጎም ችሎታ ሰጠው። ከዓመታት ጥበቃ በኋላ ፈርዖን ዮሴፍን ሕልሙን ሊያብራራ ጠራው። ዮሴፍ እኔ አልችልም እግዚአብሔር ግን ለፈርዖን መልስ ይሰጣል አለ። ዮሴፍ ሁልጊዜ ለእግዚአብሔር ክብር ይሰጥ ነበር።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Give glory to God for every gift and ability you have.</p>
+        <p class="lesson-tigrinya">ንኩሉ ህያብን ክእለትን ዘለካ ንኣምላኽ ክብሪ ሃብ።</p>
+        <p class="lesson-amharic">ላለህ ስጦታና ችሎታ ሁሉ ለእግዚአብሔር ክብር ስጥ።</p>
+    </div>
+    <span class="page-number">Page 17</span>
+</div>
+
+<!-- Scene 5 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 41:39-43</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">👑🏆🌾</div>
+    <p class="story-text"><span class="scene-number">5</span>God raised Joseph from prison to palace! Pharaoh made Joseph the second most powerful man in all of Egypt. He wore fine clothes, a gold chain, and rode in a royal chariot. From slave to ruler — only God could write such a story. Joseph stored grain to prepare for a coming famine.</p>
+    <div class="tigrinya-text">ኣምላኽ ንዮሴፍ ካብ ቤት ማእሰርቲ ናብ ቤተ መንግስቲ ኣልዓሎ! ፈርኦን ንዮሴፍ ኣብ ኩሉ ግብጺ ካልኣይ ሓያል ሰብ ገበሮ። ጽቡቕ ክዳን ሰንሰለት ወርቅን ተኸዲኑ ኣብ ንጉሳዊ ሰረገላ ተሰቐለ። ካብ ባርያ ናብ ገዛኢ — ኣምላኽ ጥራይ ከምዚ ዛንታ ክጽሕፍ ይኽእል። ዮሴፍ ንዝመጽእ ጥሜት እኽሊ ኣኸዘነ።</div>
+    <div class="amharic-text">እግዚአብሔር ዮሴፍን ከእስር ቤት ወደ ቤተ መንግሥት ከፍ አደረገው! ፈርዖን ዮሴፍን በግብጽ ሁሉ ሁለተኛ ኃያል ሰው አደረገው። ቆንጆ ልብስና የወርቅ ሰንሰለት ለብሶ በንጉሣዊ ሰረገላ ተሳፈረ። ከባሪያ ወደ ገዢ — እግዚአብሔር ብቻ እንዲህ ያለ ታሪክ ሊጽፍ ይችላል። ዮሴፍ ለሚመጣ ረሃብ እህል አከማቸ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God can lift us from the lowest place to the highest.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ካብ ዝተሓተ ቦታ ናብ ዝለዓለ ከልዕለና ይኽእል።</p>
+        <p class="lesson-amharic">እግዚአብሔር ከዝቅተኛው ቦታ ወደ ከፍተኛው ሊያነሳን ይችላል።</p>
+    </div>
+    <span class="page-number">Page 18</span>
+</div>
+
+<!-- Scene 6 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 42:6-8</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">🧎‍♂️🧎‍♂️🧎‍♂️😲</div>
+    <p class="story-text"><span class="scene-number">6</span>When famine struck the land, Joseph's brothers came to Egypt to buy food. They bowed before Joseph but did not recognize him — he was now a powerful ruler dressed in Egyptian clothes. But Joseph recognized them immediately. His heart was filled with many emotions.</p>
+    <div class="tigrinya-text">ጥሜት ንምድሪ ምስ ወቐዐ ኣሕዋት ዮሴፍ ምግቢ ክዕድጉ ናብ ግብጺ መጹ። ቅድሚ ዮሴፍ ሰገዱ ግና ኣየለለይዎን — ሕጂ ሓያል ገዛኢ ናይ ግብጺ ክዳን ዝተኸድነ ነበረ። ዮሴፍ ግና ሽዑ ኣለለዮም። ልቡ ብብዙሕ ስምዒት ተመልአ።</div>
+    <div class="amharic-text">ረሃብ ምድርን ሲመታ የዮሴፍ ወንድሞች ምግብ ለመግዛት ወደ ግብጽ መጡ። በዮሴፍ ፊት ሰገዱ ግን አላወቁትም — አሁን ኃያል ገዢ የግብጽ ልብስ የለበሰ ነበር። ዮሴፍ ግን ወዲያው አወቃቸው። ልቡ በብዙ ስሜት ተሞላ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God's plans always come true, even after many years.</p>
+        <p class="lesson-tigrinya">መደባት ኣምላኽ ድሕሪ ብዙሕ ዓመታት'ውን ኩሉ ግዜ ይፍጸም።</p>
+        <p class="lesson-amharic">የእግዚአብሔር ዕቅዶች ከብዙ ዓመታት በኋላም ሁልጊዜ ይፈጸማሉ።</p>
+    </div>
+    <span class="page-number">Page 19</span>
+</div>
+
+<!-- Scene 7 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 45:1-5</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">😭🤗💚</div>
+    <p class="story-text"><span class="scene-number">7</span>Joseph could not hold back his tears any longer. He cried out 'I am Joseph! Is my father still alive?' His brothers were terrified. But Joseph said 'Come close to me. Do not be angry with yourselves for selling me. God sent me here to save lives!' What amazing forgiveness!</p>
+    <div class="tigrinya-text">ዮሴፍ ንብዓቱ ክሕዞ ኣይከኣለን። ኣነ ዮሴፍ እየ! ኣቦይ ብህይወት ኣሎ ድዩ? ኢሉ ጨርሐ። ኣሕዋቱ ፈሪሖም። ዮሴፍ ግና ናባይ ቅረቡ ኢልኩምኒ ኣይትቆጥዑ። ኣምላኽ ህይወት ከድሕን ናብዚ ለኣኸኒ! በለ። ዘደንቕ ይቕሬታ!</div>
+    <div class="amharic-text">ዮሴፍ ከእንባው ለመቆጠብ አልቻለም። እኔ ዮሴፍ ነኝ! አባቴ በሕይወት አለ? ብሎ ጮኸ። ወንድሞቹ ፈሩ። ዮሴፍ ግን ወደ እኔ ቅረቡ ስለ ሸጣችሁኝ በራሳችሁ ላይ አትቆጡ። እግዚአብሔር ሕይወት ለማዳን እዚህ ላከኝ! አለ። አስደናቂ ይቅርታ!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Forgiveness sets us free and reveals God's bigger plan.</p>
+        <p class="lesson-tigrinya">ይቕሬታ ነጻ ይገብረና ዓቢ መደብ ኣምላኽ ድማ ይገልጽ።</p>
+        <p class="lesson-amharic">ይቅርታ ነፃ ያወጣናል የእግዚአብሔርንም ታላቅ ዕቅድ ይገልጣል።</p>
+    </div>
+    <span class="page-number">Page 20</span>
+</div>
+
+<!-- Scene 8 -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Genesis 50:19-21</span>
+    <h2 class="story-title">Joseph Forgives His Brothers</h2>
+    <p class="story-title-alt">ዮሴፍ ንኣሕዋቱ ይቕረ ይብል • ዮሴፍ ወንድሞቹን ይቅር አለ</p>
+    <div class="story-illustration">🙏❤️🌟</div>
+    <p class="story-text"><span class="scene-number">8</span>Years later, after their father Jacob died, the brothers feared Joseph would take revenge. But Joseph said 'Do not be afraid. Am I in the place of God? You meant evil against me, but God meant it for good — to save many people alive. I will take care of you and your children.' Joseph chose love over hate, mercy over revenge.</p>
+    <div class="tigrinya-text">ድሕሪ ዓመታት ኣቦኦም ያዕቆብ ምስ ሞተ ኣሕዋቱ ዮሴፍ ሕነ ክፈዲ ፈሪሖም። ዮሴፍ ግና ኣይትፍርሑ ኣብ ቦታ ኣምላኽ ድየ ዘለኹ? ንስኻትኩም ክፉእ ሓሲብኩምለይ ኣምላኽ ግና ንጽቡቕ ሓሰቦ — ንብዙሕ ህዝቢ ህይወት ከድሕን። ንዓኹምን ንደቅኹምን ክእሊ እየ በለ። ዮሴፍ ካብ ጽልኢ ፍቕሪ ካብ ሕነ ምሕረት መረጸ።</div>
+    <div class="amharic-text">ከዓመታት በኋላ አባታቸው ያዕቆብ ከሞተ በኋላ ወንድሞቹ ዮሴፍ ይበቀለናል ብለው ፈሩ። ዮሴፍ ግን አትፍሩ በእግዚአብሔር ቦታ ነኝ? እናንተ ክፉ አሰባችሁብኝ እግዚአብሔር ግን ለበጎ አሰበው — ብዙ ሕዝብ በሕይወት ለማዳን። እናንተንና ልጆቻችሁን እመግባለሁ አለ። ዮሴፍ ከጥላቻ ይልቅ ፍቅርን ከበቀል ይልቅ ምሕረትን መረጠ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God turns what was meant for evil into good for those who trust Him.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ንክፉእ ዝተሓስበ ንዝኣመንዎ ናብ ጽቡቕ ይቕይሮ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ለክፉ የታሰበውን ለሚያምኑት ወደ በጎ ይለውጣል።</p>
+    </div>
+    <span class="page-number">Page 21</span>
+</div>
+
+<!-- ==================== STORY 3: RUTH'S LOYALTY ==================== -->
+<!-- Scene 1 -->
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Ruth 1:1-5</span>
+    <h2 class="story-title">Ruth's Loyalty</h2>
+    <p class="story-title-alt">ታኣማንነት ሩት • የሩት ታማኝነት</p>
+    <div class="story-illustration">💔😢🏜️</div>
+    <p class="story-text"><span class="scene-number">1</span>During a terrible famine, a family from Bethlehem moved to the land of Moab. Naomi and her husband Elimelech had two sons. Sadly, Elimelech died. The two sons married Moabite women — Orpah and Ruth. Then both sons also died. Naomi was left with nothing but sorrow and her two daughters-in-law.</p>
+    <div class="tigrinya-text">ኣብ ዘፍርሕ ጥሜት ሓንቲ ስድራ ካብ ቤትልሄም ናብ ምድሪ ሞዓብ ገዓዘት። ንኦሚን ሰብኣያ ኤሊሜሌክን ክልተ ኣወዳት ነበርዎም። ብሕማቕ ዕድል ኤሊሜሌክ ሞተ። ክልተ ኣወዳት ሞዓባውያን ኣንስቲ — ዓርጳን ሩትን — ኣእተዉ። ድሕሪኡ ክልቲኦም ኣወዳት'ውን ሞቱ። ንኦሚ ካብ ሓዘንን ክልተ ሰነይቲታን ዝተረፋ ኣይነበረን።</div>
+    <div class="amharic-text">በአስፈሪ ረሃብ ጊዜ አንድ ቤተሰብ ከቤተልሔም ወደ ሞአብ ምድር ተዛወረ። ኑኦሚና ባሏ ኤሊሜሌክ ሁለት ወንዶች ልጆች ነበሯቸው። በሚያሳዝን ሁኔታ ኤሊሜሌክ ሞተ። ሁለቱ ልጆች ሞአባውያን ሴቶችን — ኦርፋንና ሩትን — አገቡ። ከዚያ ሁለቱም ልጆች ደግሞ ሞቱ። ኑኦሚ ከሀዘንና ከሁለት ምራቶቿ በስተቀር ምንም አልቀራትም።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Hard times come to everyone, but God is still present.</p>
+        <p class="lesson-tigrinya">ኣጸጋሚ ግዜ ንኹሉ ይመጽእ ኣምላኽ ግና ይርከብ።</p>
+        <p class="lesson-amharic">ከባድ ጊዜ ለሁሉም ይመጣል እግዚአብሔር ግን አለ።</p>
+    </div>
+    <span class="page-number">Page 22</span>
+</div>
+
+<!-- Scene 2 -->
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Ruth 1:14-17</span>
+    <h2 class="story-title">Ruth's Loyalty</h2>
+    <p class="story-title-alt">ታኣማንነት ሩት • የሩት ታማኝነት</p>
+    <div class="story-illustration">🤝💕🛤️</div>
+    <p class="story-text"><span class="scene-number">2</span>Naomi decided to return to Bethlehem. She told her daughters-in-law to go back to their own families. Orpah kissed Naomi goodbye and left. But Ruth held on tightly and said the most beautiful words: 'Where you go, I will go. Where you stay, I will stay. Your people will be my people, and your God my God.'</p>
+    <div class="tigrinya-text">ንኦሚ ናብ ቤትልሄም ክትምለስ ወሰነት። ንሰነይቲታታ ናብ ስድራቤተን ክምለሳ ነገረተን። ዓርጳ ንንኦሚ ሰዓመት ተፋነወት ከደት። ሩት ግና ጸኒዓ ሒዛ ዝጽብቐ ቃል ተዛረበት ንስኺ ናብ ዝኸድክዮ ኣነ ክኸይድ እየ ንስኺ ኣብ ዝጸናሕክዮ ኣነ ክጸንሕ እየ ህዝብኺ ህዝበይ ኣምላኽኪ ኣምላኸይ።</div>
+    <div class="amharic-text">ኑኦሚ ወደ ቤተልሔም ለመመለስ ወሰነች። ምራቶቿን ወደ ቤተሰባቸው እንዲመለሱ ነገረቻቸው። ኦርፋ ኑኦሚን ሳመችና ተሰናብታ ሄደች። ሩት ግን ጠንክራ ይዛ ይህን ቆንጆ ቃል ተናገረች አንቺ ወደምትሄጂበት እኔ እሄዳለሁ አንቺ ወደምትኖሪበት እኔ እኖራለሁ ሕዝብሽ ሕዝቤ ነው አምላክሽም አምላኬ ነው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">True loyalty stays when everyone else leaves.</p>
+        <p class="lesson-tigrinya">ሓቀኛ ታኣማንነት ኩሉ ሰብ ምስ ዝኸይድ ትጸንሕ።</p>
+        <p class="lesson-amharic">እውነተኛ ታማኝነት ሁሉም ሰው ሲሄድ ትቀራለች።</p>
+    </div>
+    <span class="page-number">Page 23</span>
+</div>
+
+<!-- Scene 3 -->
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Ruth 2:2-7</span>
+    <h2 class="story-title">Ruth's Loyalty</h2>
+    <p class="story-title-alt">ታኣማንነት ሩት • የሩት ታማኝነት</p>
+    <div class="story-illustration">🌾👩‍🌾☀️</div>
+    <p class="story-text"><span class="scene-number">3</span>In Bethlehem, Ruth worked hard to provide food for Naomi. She went to the fields to gather leftover grain behind the harvesters. She worked from morning until evening without rest. Ruth was humble, hardworking, and devoted. God was watching over her faithful service.</p>
+    <div class="tigrinya-text">ኣብ ቤትልሄም ሩት ንንኦሚ ምግቢ ከተዳሉ ጽዒራ ሰርሐት። ድሕሪ ዓጻድቲ ዝተረፈ እኽሊ ክትኣርዪ ናብ ግራት ከደት። ካብ ንግሆ ክሳብ ምሸት ብዘይ ዕረፍቲ ሰርሐት። ሩት ትሑት ጻዕራምን ተወፋይትን ነበረት። ኣምላኽ ታኣማኒት ኣገልግሎታ ይከታተል ነበረ።</div>
+    <div class="amharic-text">በቤተልሔም ሩት ለኑኦሚ ምግብ ለማቅረብ ጠንክራ ሠራች። ከአጫጆች ኋላ የቀረ እህል ለመልቀም ወደ ሜዳ ሄደች። ከጠዋት እስከ ማታ ያለ ዕረፍት ሠራች። ሩት ትሑት ጠንካራ ሠራተኛና ታማኝ ነበረች። እግዚአብሔር ታማኝ አገልግሎቷን ይከታተል ነበር።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Hard work and faithfulness are always rewarded by God.</p>
+        <p class="lesson-tigrinya">ጻዕርን ታኣማንነትን ኩሉ ግዜ ብኣምላኽ ይሽለም።</p>
+        <p class="lesson-amharic">ጠንካራ ሥራና ታማኝነት ሁልጊዜ በእግዚአብሔር ይሸለማሉ።</p>
+    </div>
+    <span class="page-number">Page 24</span>
+</div>
+
+<!-- Scene 4 -->
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Ruth 2:8-12</span>
+    <h2 class="story-title">Ruth's Loyalty</h2>
+    <p class="story-title-alt">ታኣማንነት ሩት • የሩት ታማኝነት</p>
+    <div class="story-illustration">👨‍🌾💬🛡️</div>
+    <p class="story-text"><span class="scene-number">4</span>Boaz, a wealthy relative of Naomi's husband, noticed Ruth in his field. He told her to stay in his field where she would be safe and have water to drink. He said 'I have heard about your loyalty to Naomi. May the Lord reward you fully, under whose wings you have come to take refuge.'</p>
+    <div class="tigrinya-text">ቦዓዝ ሃብታም ዘመድ ሰብኣይ ንኦሚ ንሩት ኣብ ግራቱ ኣስተውዓላ። ኣብ ግራቱ ክትጸንሕ ድሕንቲ ዝኾነትሉን ማይ ትሰቲ ዝረኽበትሉን ነገራ። ብዛዕባ ታኣማንነትኪ ንንኦሚ ሰሚዐ ኣለኹ ጐይታ ብምሉእ ይሽልምኪ ኣብ ትሕቲ ኣኽናፉ ዝዕቆብኪ በለ።</div>
+    <div class="amharic-text">ቦዔዝ የኑኦሚ ባል ሀብታም ዘመድ ሩትን በሜዳው ላይ አስተዋለ። በሜዳው ውስጥ ትቆይ ደህንነቷ የተጠበቀና ውሃ የምታገኝበት እንዲሆን ነገራት። ስለ ታማኝነትሽ ለኑኦሚ ሰምቻለሁ ጌታ ሙሉ ይክፈልሽ በክንፎቹ ስር ለመጠለል የመጣሽ አላት።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God provides protection through the kindness of others.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ብለውሃት ካልኦት ሓለዋ ይዕድግ።</p>
+        <p class="lesson-amharic">እግዚአብሔር በሌሎች ደግነት ጥበቃ ያቀርባል።</p>
+    </div>
+    <span class="page-number">Page 25</span>
+</div>
+
+<!-- Scene 5 -->
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Ruth 4:13-17</span>
+    <h2 class="story-title">Ruth's Loyalty</h2>
+    <p class="story-title-alt">ታኣማንነት ሩት • የሩት ታማኝነት</p>
+    <div class="story-illustration">💒👶🎉</div>
+    <p class="story-text"><span class="scene-number">5</span>Boaz married Ruth and they had a son named Obed. The women of the town told Naomi 'Praise the Lord! Ruth who loves you is better to you than seven sons.' Obed became the grandfather of King David, and from David's line came Jesus! God turned Ruth's faithfulness into an eternal blessing for the whole world.</p>
+    <div class="tigrinya-text">ቦዓዝ ንሩት ኣእተዋ ኦቤድ ዝስሙ ወዲ ወለዱ። ኣንስቲ ከተማ ንንኦሚ ንጐይታ ውደስዮ! ሩት ዝፈተወትኪ ካብ ሸውዓተ ኣወዳት ትበልጸኪ በላኣ። ኦቤድ ኣቦ ኣቦ ንጉስ ዳዊት ኮነ ካብ ዓሌት ዳዊት ድማ ኢየሱስ መጸ! ኣምላኽ ታኣማንነት ሩት ናብ ዘለኣለማዊ በረኸት ንኹሉ ዓለም ቀየሮ።</div>
+    <div class="amharic-text">ቦዔዝ ሩትን አገባ ኦቤድ የተባለ ልጅ ወለዱ። የከተማው ሴቶች ኑኦሚን ጌታን አመስግኚ! ሩት የምትወድሽ ከሰባት ወንዶች ልጆች ትበልጥሻለች አሏት። ኦቤድ የንጉሥ ዳዊት አያት ሆነ ከዳዊት ዘርም ኢየሱስ መጣ! እግዚአብሔር የሩትን ታማኝነት ለመላው ዓለም ዘላለማዊ በረከት አደረገ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Loyalty and love bring blessings beyond our imagination.</p>
+        <p class="lesson-tigrinya">ታኣማንነትን ፍቕርን ካብ ምናብና ንላዕሊ በረኸት የምጽኣ።</p>
+        <p class="lesson-amharic">ታማኝነትና ፍቅር ከምናባችን በላይ በረከት ያመጣሉ።</p>
+    </div>
+    <span class="page-number">Page 26</span>
+</div>
+
+<!-- ==================== STORY 4: JONAH AND THE BIG FISH ==================== -->
+<div class="page story-page theme-cyan">
+    <span class="bible-ref">Jonah 1:1-3</span>
+    <h2 class="story-title">Jonah and the Big Fish</h2>
+    <p class="story-title-alt">ዮናስን ዓቢ ዓሳን • ዮናስና ትልቁ ዓሳ</p>
+    <div class="story-illustration">🚢🏃‍♂️🌊</div>
+    <p class="story-text"><span class="scene-number">1</span>God told Jonah to go to the great city of Nineveh and warn the people to turn from their evil ways. But Jonah did not want to obey. He ran away in the opposite direction and boarded a ship going far across the sea, trying to hide from God.</p>
+    <div class="tigrinya-text">ኣምላኽ ንዮናስ ናብ ዓባይ ከተማ ነነዌ ከይዱ ንህዝቢ ካብ ክፉእ መንገዶም ክምለሱ ከጠንቅቖም ነገሮ። ዮናስ ግና ክእዘዝ ኣይደለየን። ናብ ተጻራሪ መገዲ ሃዲሙ ካብ ኣምላኽ ክሕባእ ናብ ርሑቕ ባሕሪ ዝኸይድ መርከብ ተሳፈረ።</div>
+    <div class="amharic-text">እግዚአብሔር ዮናስን ወደ ታላቂቱ ከተማ ነነዌ ሂደህ ሕዝቡ ከክፉ መንገዳቸው እንዲመለሱ አስጠንቅቅ አለው። ዮናስ ግን መታዘዝ አልፈለገም። ወደ ተቃራኒ አቅጣጫ ሸሽቶ ከእግዚአብሔር ለመሸሸግ ወደ ሩቅ ባሕር ወደሚሄድ መርከብ ተሳፈረ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">We cannot run away from God or hide from His plans.</p>
+        <p class="lesson-tigrinya">ካብ ኣምላኽ ክንሃድም ወይ ካብ መደባቱ ክንሕባእ ኣይንኽእልን።</p>
+        <p class="lesson-amharic">ከእግዚአብሔር መሸሽ ወይም ከዕቅዱ መደበቅ አንችልም።</p>
+    </div>
+    <span class="page-number">Page 27</span>
+</div>
+
+<div class="page story-page theme-cyan">
+    <span class="bible-ref">Jonah 1:4-12</span>
+    <h2 class="story-title">Jonah and the Big Fish</h2>
+    <p class="story-title-alt">ዮናስን ዓቢ ዓሳን • ዮናስና ትልቁ ዓሳ</p>
+    <div class="story-illustration">⛈️🌊😰</div>
+    <p class="story-text"><span class="scene-number">2</span>A violent storm arose and the ship was about to break apart. The sailors were terrified. Jonah knew the storm was because of his disobedience. He told the sailors 'Throw me into the sea, and it will become calm, for this great storm is my fault.'</p>
+    <div class="tigrinya-text">ብርቱዕ ማዕበል ተላዕለ መርከብ ክትሰባበር ቀረበት። ጀላቡ ፈሪሖም። ዮናስ እቲ ማዕበል ብሰንኪ ዘይምእዛዙ ምዃኑ ፈለጠ። ንጀላቡ ናብ ባሕሪ ደርብዩኒ ክህድእ እዩ እዚ ዓቢ ማዕበል ብሰበበይ እዩ በሎም።</div>
+    <div class="amharic-text">ኃይለኛ ማዕበል ተነሳ መርከቢቱም ልትሰበር ተቃረበች። መርከበኞቹ ፈሩ። ዮናስ ማዕበሉ ባለመታዘዙ እንደሆነ አወቀ። መርከበኞቹን ወደ ባሕር ጣሉኝ ይረጋጋል ይህ ታላቅ ማዕበል በእኔ ጥፋት ነው አላቸው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Taking responsibility for our mistakes is the first step to making things right.</p>
+        <p class="lesson-tigrinya">ንጌጋና ሓላፍነት ምውሳድ ነገራት ንምስትኻኸል ቀዳማይ ስጉምቲ እዩ።</p>
+        <p class="lesson-amharic">ለስህተታችን ኃላፊነት መውሰድ ነገሮችን ለማስተካከል የመጀመሪያ እርምጃ ነው።</p>
+    </div>
+    <span class="page-number">Page 28</span>
+</div>
+
+<div class="page story-page theme-cyan">
+    <span class="bible-ref">Jonah 1:17</span>
+    <h2 class="story-title">Jonah and the Big Fish</h2>
+    <p class="story-title-alt">ዮናስን ዓቢ ዓሳን • ዮናስና ትልቁ ዓሳ</p>
+    <div class="story-illustration">🐋🌊😮</div>
+    <p class="story-text"><span class="scene-number">3</span>The moment Jonah was thrown into the sea, the storm stopped completely. But God was not finished with Jonah. He sent a great fish that swallowed Jonah whole. Jonah stayed inside the belly of the fish for three days and three nights.</p>
+    <div class="tigrinya-text">ዮናስ ናብ ባሕሪ ምስ ተደርበየ ማዕበል ብምሉእ ደው በለ። ኣምላኽ ግና ምስ ዮናስ ኣይወድአን። ንዮናስ ምሉእ ዝወሓጠ ዓቢ ዓሳ ለኣኸ። ዮናስ ኣብ ከብዲ ዓሳ ሰለስተ መዓልትን ሰለስተ ለይትን ጸንሐ።</div>
+    <div class="amharic-text">ዮናስ ወደ ባሕር ሲጣል ማዕበሉ ሙሉ በሙሉ ቆመ። እግዚአብሔር ግን ከዮናስ ጋር አልጨረሰም። ዮናስን ሙሉ የዋጠ ትልቅ ዓሳ ላከ። ዮናስ በዓሳው ሆድ ውስጥ ሦስት ቀንና ሦስት ሌሊት ቆየ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God disciplines us because He loves us and has a purpose.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ስለ ዝፈተወናን ዓላማ ስለ ዘለዎን ይቐጽዓና።</p>
+        <p class="lesson-amharic">እግዚአብሔር ስለሚወደንና ዓላማ ስላለው ይቀጣናል።</p>
+    </div>
+    <span class="page-number">Page 29</span>
+</div>
+
+<div class="page story-page theme-cyan">
+    <span class="bible-ref">Jonah 2:1-10</span>
+    <h2 class="story-title">Jonah and the Big Fish</h2>
+    <p class="story-title-alt">ዮናስን ዓቢ ዓሳን • ዮናስና ትልቁ ዓሳ</p>
+    <div class="story-illustration">🙏💙🐋</div>
+    <p class="story-text"><span class="scene-number">4</span>Inside the fish, Jonah prayed to God with all his heart. He was truly sorry for running away. He said 'I called to the Lord in my trouble, and He answered me.' Then God commanded the fish to spit Jonah out safely onto dry land.</p>
+    <div class="tigrinya-text">ኣብ ውሽጢ ዓሳ ዮናስ ብምሉእ ልቡ ናብ ኣምላኽ ጸለየ። ብምህዳሙ ብሓቂ ተጣዕሰ። ኣብ ጸበባይ ናብ ጐይታ ጸዋዕኩ ንሱ ድማ መለሰለይ በለ። ሽዑ ኣምላኽ ንዓሳ ዮናስ ብደሓን ናብ ንቑጽ ምድሪ ክተፍኦ ኣዘዞ።</div>
+    <div class="amharic-text">በዓሳው ውስጥ ዮናስ በሙሉ ልቡ ወደ እግዚአብሔር ጸለየ። ስለ ሸሸ በእውነት ተጸጸተ። በመከራዬ ወደ ጌታ ጠራሁ እርሱም መለሰልኝ አለ። ከዚያ እግዚአብሔር ዓሳውን ዮናስን በደህና ወደ ደረቅ ምድር እንዲተፋው አዘዘው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God hears us when we pray, even from our lowest point.</p>
+        <p class="lesson-tigrinya">ኣብ ዝተሓተ ቦታና'ውን ክንጽሊ ኣምላኽ ይሰምዓና።</p>
+        <p class="lesson-amharic">ከዝቅተኛው ቦታችንም ስንጸልይ እግዚአብሔር ይሰማናል።</p>
+    </div>
+    <span class="page-number">Page 30</span>
+</div>
+
+<div class="page story-page theme-cyan">
+    <span class="bible-ref">Jonah 3:1-10</span>
+    <h2 class="story-title">Jonah and the Big Fish</h2>
+    <p class="story-title-alt">ዮናስን ዓቢ ዓሳን • ዮናስና ትልቁ ዓሳ</p>
+    <div class="story-illustration">🏙️🙏✨</div>
+    <p class="story-text"><span class="scene-number">5</span>God gave Jonah a second chance. This time Jonah obeyed and went to Nineveh. He warned the people, and amazingly, the whole city repented and turned to God! God forgave them and did not destroy the city. Jonah learned that God is merciful to all who turn to Him.</p>
+    <div class="tigrinya-text">ኣምላኽ ንዮናስ ካልኣይ ዕድል ሃቦ። እዚ ግዜ ዮናስ ተኣዚዙ ናብ ነነዌ ከደ። ንህዝቢ ኣጠንቀቖም ብዘደንቕ ኩላ ከተማ ተነስሐት ናብ ኣምላኽ ተመልሰት! ኣምላኽ ይቕረ በለሎም ንከተማ ኣየጥፍአን። ዮናስ ኣምላኽ ንዝምለሱ ኩሎም መሓሪ ምዃኑ ተማህረ።</div>
+    <div class="amharic-text">እግዚአብሔር ለዮናስ ሁለተኛ ዕድል ሰጠው። በዚህ ጊዜ ዮናስ ታዝዞ ወደ ነነዌ ሄደ። ሕዝቡን አስጠነቀቀ በሚያስደንቅ ሁኔታ መላዋ ከተማ ተጸጸተች ወደ እግዚአብሔር ተመለሰች! እግዚአብሔር ይቅር አላቸው ከተማዋንም አላጠፋም። ዮናስ እግዚአብሔር ለሚመለሱ ሁሉ መሐሪ እንደሆነ ተማረ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God gives second chances and forgives those who repent.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ካልኣይ ዕድል ይህብ ንዝንስሑ ድማ ይቕረ ይብል።</p>
+        <p class="lesson-amharic">እግዚአብሔር ሁለተኛ ዕድል ይሰጣል ለሚጸጸቱም ይቅር ይላል።</p>
+    </div>
+    <span class="page-number">Page 31</span>
+</div>
+
+<!-- ==================== STORY 5: THE PRODIGAL SON ==================== -->
+<div class="page story-page theme-orange">
+    <span class="bible-ref">Luke 15:11-12</span>
+    <h2 class="story-title">The Prodigal Son</h2>
+    <p class="story-title-alt">ጥፉእ ወዲ • ጠፍቶ የተመለሰ ልጅ</p>
+    <div class="story-illustration">👨‍👦💰🎒</div>
+    <p class="story-text"><span class="scene-number">1</span>A father had two sons. The younger son asked his father to give him his share of the inheritance early. The father gave it to him. A few days later, the young son packed all his things and traveled to a distant country, far from his family.</p>
+    <div class="tigrinya-text">ሓደ ኣቦ ክልተ ኣወዳት ነበርዎ። ንእሽቶ ወዲ ንኣቡኡ ግደ ውርሻኡ ኣቐዲሙ ክህቦ ሓተተ። ኣቦ ሃቦ። ድሕሪ ቁሩብ መዓልቲ ንእሽቶ ወዲ ኩሉ ንብረቱ ጠርኒፉ ካብ ስድራቤቱ ናብ ርሑቕ ሃገር ተጓዕዘ።</div>
+    <div class="amharic-text">አንድ አባት ሁለት ወንዶች ልጆች ነበሩት። ታናሹ ልጅ አባቱን የርስቱን ድርሻ ቀድሞ እንዲሰጠው ጠየቀ። አባቱም ሰጠው። ከጥቂት ቀናት በኋላ ታናሹ ልጅ ንብረቱን ሁሉ ሰብስቦ ከቤተሰቡ ርቆ ወደ ሩቅ አገር ተጓዘ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Selfish choices often lead us away from those who love us.</p>
+        <p class="lesson-tigrinya">ስሱዕ ምርጫ መብዛሕትኡ ግዜ ካብ ዝፈትዉና የርሕቐና።</p>
+        <p class="lesson-amharic">ራስ ወዳድ ምርጫዎች ብዙ ጊዜ ከሚወዱን ያርቁናል።</p>
+    </div>
+    <span class="page-number">Page 32</span>
+</div>
+
+<div class="page story-page theme-orange">
+    <span class="bible-ref">Luke 15:13-16</span>
+    <h2 class="story-title">The Prodigal Son</h2>
+    <p class="story-title-alt">ጥፉእ ወዲ • ጠፍቶ የተመለሰ ልጅ</p>
+    <div class="story-illustration">🍾😞🐷</div>
+    <p class="story-text"><span class="scene-number">2</span>The young son wasted all his money on wild living. When his money was gone, a severe famine spread through the land. He became so poor and hungry that he took a job feeding pigs. He was so hungry he wished he could eat the pigs' food. He hit rock bottom.</p>
+    <div class="tigrinya-text">ንእሽቶ ወዲ ኩሉ ገንዘቡ ኣብ ራሕራሕ ናብራ ኣባኸነ። ገንዘቡ ምስ ወድአ ኣብ ምድሪ ብርቱዕ ጥሜት ተላብዐ። ኣዝዩ ድኻን ጥሙይን ኮነ ኣሕሰማ ንምዕንጋል ስራሕ ሓዘ። ኣዝዩ ጥሙይ ስለ ዝነበረ ናይ ሓሰማ ምግቢ ክበልዕ ተመነየ። ናብ ታሕቲ ወደቐ።</div>
+    <div class="amharic-text">ታናሹ ልጅ ገንዘቡን ሁሉ በዘፈቀደ ኑሮ አባከነ። ገንዘቡ ሲያልቅ በምድሪቱ ኃይለኛ ረሃብ ተስፋፋ። እጅግ ደሃና ተራበ አሳማ ለማድለብ ሥራ ያዘ። እጅግ ስለተራበ የአሳማውን ምግብ መብላት ተመኘ። ወደ ታች ወደቀ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Wrong choices can lead us to difficult and lonely places.</p>
+        <p class="lesson-tigrinya">ጌጋ ምርጫ ናብ ኣጸጋምን በይናዊን ቦታታት ክመርሓና ይኽእል።</p>
+        <p class="lesson-amharic">የተሳሳተ ምርጫ ወደ አስቸጋሪና ብቸኛ ቦታዎች ሊመራን ይችላል።</p>
+    </div>
+    <span class="page-number">Page 33</span>
+</div>
+
+<div class="page story-page theme-orange">
+    <span class="bible-ref">Luke 15:17-19</span>
+    <h2 class="story-title">The Prodigal Son</h2>
+    <p class="story-title-alt">ጥፉእ ወዲ • ጠፍቶ የተመለሰ ልጅ</p>
+    <div class="story-illustration">💭🏠😔</div>
+    <p class="story-text"><span class="scene-number">3</span>Then the young man came to his senses. He thought 'Even my father's servants have plenty of food, and here I am starving! I will go back to my father and say: Father, I have sinned against heaven and against you. I am no longer worthy to be called your son.'</p>
+    <div class="tigrinya-text">ሽዑ እቲ መንእሰይ ናብ ልቡ ተመልሰ። ኣገልገልቲ ኣቦይ'ኳ እኹል ምግቢ ኣለዎም ኣነ ግና ኣብዚ እጠሚ ኣለኹ! ናብ ኣቦይ ተመሊሰ ኣቦ ኣብ ሰማይን ኣብ ቅድሜኻን በዲለ ወድኻ ክብሃል ኣይግብኣንን ክብሎ እየ ኢሉ ሓሰበ።</div>
+    <div class="amharic-text">ከዚያ ወጣቱ ወደ አእምሮው ተመለሰ። የአባቴ አገልጋዮች እንኳ በቂ ምግብ አላቸው እኔ ግን እዚህ እራባለሁ! ወደ አባቴ ተመልሼ አባት በሰማይና በአንተ ፊት በደልኩ ልጅህ ተብዬ ልጠራ አይገባኝም እለዋለሁ ብሎ አሰበ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Recognizing our mistakes is the first step toward coming home.</p>
+        <p class="lesson-tigrinya">ጌጋና ምፍላጥ ናብ ገዛ ንምምላስ ቀዳማይ ስጉምቲ እዩ።</p>
+        <p class="lesson-amharic">ስህተታችንን ማወቅ ወደ ቤት ለመመለስ የመጀመሪያ እርምጃ ነው።</p>
+    </div>
+    <span class="page-number">Page 34</span>
+</div>
+
+<div class="page story-page theme-orange">
+    <span class="bible-ref">Luke 15:20-24</span>
+    <h2 class="story-title">The Prodigal Son</h2>
+    <p class="story-title-alt">ጥፉእ ወዲ • ጠፍቶ የተመለሰ ልጅ</p>
+    <div class="story-illustration">🏃‍♂️🤗🎉</div>
+    <p class="story-text"><span class="scene-number">4</span>While the son was still far away, his father saw him and was filled with compassion. He ran to his son, threw his arms around him, and kissed him. The father celebrated with a great feast saying 'My son was lost and is found! He was dead and is alive again!'</p>
+    <div class="tigrinya-text">እቲ ወዲ ገና ርሑቕ ከሎ ኣቡኡ ረኣዮ ብድንጋጸ ተመልአ። ናብ ወዱ ጎየየ ብኣእዳዉ ሓቚፉ ሰዓሞ። ኣቦ ወደይ ጠፊኡ ተረኺቡ! ሞይቱ ዳግም ህያው ኮይኑ! ኢሉ ብዓቢ ድግስ ኣብዓለ።</div>
+    <div class="amharic-text">ልጁ ገና ሩቅ ሳለ አባቱ አየው በርኅራኄ ተሞላ። ወደ ልጁ ሮጠ በእጆቹ አቅፎ ሳመው። አባቱ ልጄ ጠፍቶ ተገኘ! ሞቶ እንደገና ሕያው ሆነ! ብሎ በታላቅ ግብዣ አከበረ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God always welcomes us home with open arms and great joy.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ብኽፉት ኣእዳውን ብዓቢ ሓጐስን ናብ ገዛ ይቕበለና።</p>
+        <p class="lesson-amharic">እግዚአብሔር ሁልጊዜ በክፍት እጆችና በታላቅ ደስታ ወደ ቤት ይቀበለናል።</p>
+    </div>
+    <span class="page-number">Page 35</span>
+</div>
+
+<!-- ==================== STORY 6: ELIJAH AND THE RAVENS ==================== -->
+<div class="page story-page theme-teal">
+    <span class="bible-ref">1 Kings 17:1-3</span>
+    <h2 class="story-title">Elijah and the Ravens</h2>
+    <p class="story-title-alt">ኤልያስን ኳዃትን • ኤልያስና ቁራዎች</p>
+    <div class="story-illustration">🧔🌵☀️</div>
+    <p class="story-text"><span class="scene-number">1</span>The prophet Elijah told the wicked King Ahab that there would be no rain for years because the people had turned away from God. A terrible drought and famine came upon the land. God told Elijah to go and hide by a small brook called Kerith.</p>
+    <div class="tigrinya-text">ነብዪ ኤልያስ ንእኩይ ንጉስ ኣከኣብ ህዝቢ ካብ ኣምላኽ ስለ ዝረሓቑ ንዓመታት ዝናብ ከም ዘይህሉ ነገሮ። ኣብ ምድሪ ዘፍርሕ ደርቕን ጥሜትን መጸ። ኣምላኽ ንኤልያስ ኪሪት ናብ ዝብሃል ንእሽቶ ሩባ ከይዱ ክሕባእ ነገሮ።</div>
+    <div class="amharic-text">ነቢዩ ኤልያስ ለክፉው ንጉሥ አክዓብ ሕዝቡ ከእግዚአብሔር ስለ ራቁ ለዓመታት ዝናብ እንደማይኖር ነገረው። በምድሪቱ አስፈሪ ድርቅና ረሃብ መጣ። እግዚአብሔር ኤልያስን ኬሪት ወደሚባል ትንሽ ወንዝ ሄዶ እንዲደበቅ ነገረው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God gives His messengers courage to speak the truth.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ንልኡኻቱ ሓቂ ክዛረቡ ትብዓት ይህብ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ለመልእክተኞቹ እውነትን ለመናገር ድፍረት ይሰጣል።</p>
+    </div>
+    <span class="page-number">Page 36</span>
+</div>
+
+<div class="page story-page theme-teal">
+    <span class="bible-ref">1 Kings 17:4-6</span>
+    <h2 class="story-title">Elijah and the Ravens</h2>
+    <p class="story-title-alt">ኤልያስን ኳዃትን • ኤልያስና ቁራዎች</p>
+    <div class="story-illustration">🐦🍞🥩</div>
+    <p class="story-text"><span class="scene-number">2</span>By the brook, Elijah had fresh water to drink. And God did something amazing — He commanded ravens to bring Elijah food! Every morning and every evening, the birds brought him bread and meat. God provided for Elijah in a way no one could have imagined.</p>
+    <div class="tigrinya-text">ኣብ ጥቓ ሩባ ኤልያስ ንሽቶ ንጹህ ማይ ነበሮ። ኣምላኽ ድማ ዘደንቕ ነገር ገበረ — ንኳዃት ንኤልያስ ምግቢ ከምጽኡ ኣዘዞም! ነፍሲ ወከፍ ንግሆን ምሸትን እተን ኣዕዋፍ እንጌራን ስጋን የምጽኣሉ ነበራ። ኣምላኽ ንኤልያስ ሓደ'ኳ ክሓስቦ ብዘይክእል መገዲ ኣዳለወሉ።</div>
+    <div class="amharic-text">በወንዙ አጠገብ ኤልያስ የሚጠጣው ንጹህ ውሃ ነበረው። እግዚአብሔርም አስደናቂ ነገር አደረገ — ቁራዎችን ለኤልያስ ምግብ እንዲያመጡ አዘዛቸው! በየጧትና በየማታ ወፎቹ ዳቦና ሥጋ ያመጡለት ነበር። እግዚአብሔር ለኤልያስ ማንም ሊያስበው በማይችል መንገድ አቀረበለት።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God provides for us in unexpected and miraculous ways.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ብዘይተጸበናዮን ተኣምራዊን መገዲ የዳሉ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ባልጠበቅነውና ተአምራዊ በሆነ መንገድ ያቀርብልናል።</p>
+    </div>
+    <span class="page-number">Page 37</span>
+</div>
+
+<div class="page story-page theme-teal">
+    <span class="bible-ref">1 Kings 17:8-16</span>
+    <h2 class="story-title">Elijah and the Ravens</h2>
+    <p class="story-title-alt">ኤልያስን ኳዃትን • ኤልያስና ቁራዎች</p>
+    <div class="story-illustration">👩🫙🍞</div>
+    <p class="story-text"><span class="scene-number">3</span>Later God sent Elijah to a poor widow. She had only a little flour and oil left — just enough for one last meal for her and her son. But Elijah told her to trust God. She shared her food, and miraculously her flour and oil never ran out until the rain returned!</p>
+    <div class="tigrinya-text">ደሓር ኣምላኽ ንኤልያስ ናብ ድኽይቲ መበለት ለኣኾ። ንሳ ቁሩብ ሓርጭን ዘይትን ጥራይ ተሪፍዋ — ንዓኣን ንወዳን ናይ መወዳእታ ምግቢ ጥራይ። ኤልያስ ግና ንኣምላኽ ክትኣምን ነገራ። ምግባ ኣካፈለት ብተኣምር ድማ ክሳብ ዝናብ ዝምለስ ሓርጫን ዘይታን ኣይወድአን!</div>
+    <div class="amharic-text">በኋላ እግዚአብሔር ኤልያስን ወደ ደሃ መበለት ላከው። እሷ ትንሽ ዱቄትና ዘይት ብቻ ቀርቷት ነበር — ለእሷና ለልጇ የመጨረሻ ምግብ ብቻ። ኤልያስ ግን እግዚአብሔርን እንድታምን ነገራት። ምግቧን አካፈለች በተአምርም ዝናብ እስኪመለስ ዱቄቷና ዘይቷ አላለቀም!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">When we give in faith, God multiplies what little we have.</p>
+        <p class="lesson-tigrinya">ብእምነት ምስ ንህብ ኣምላኽ ነቲ ዘሎና ውሑድ የብዝሖ።</p>
+        <p class="lesson-amharic">በእምነት ስንሰጥ እግዚአብሔር ያለንን ጥቂት ያበዛዋል።</p>
+    </div>
+    <span class="page-number">Page 38</span>
+</div>
+
+<!-- ==================== STORY 7: THE WISE AND FOOLISH BUILDERS ==================== -->
+<div class="page story-page theme-amber">
+    <span class="bible-ref">Matthew 7:24</span>
+    <h2 class="story-title">The Wise and Foolish Builders</h2>
+    <p class="story-title-alt">ጥበበኛን ዓሻን ሃነጽቲ • ጥበበኛና ሞኝ ገንቢዎች</p>
+    <div class="story-illustration">👷‍♂️🪨🏠</div>
+    <p class="story-text"><span class="scene-number">1</span>Jesus told a story about two builders. The wise builder dug deep and built his house on solid rock. He worked hard to lay a strong foundation, even though it took more time and effort. He knew that a strong foundation was the most important part.</p>
+    <div class="tigrinya-text">ኢየሱስ ብዛዕባ ክልተ ሃነጽቲ ዛንታ ነገረ። ጥበበኛ ሃናጻይ ዓሚቚ ኵዒቱ ገዝኡ ኣብ ተሪር ከውሒ ሃነጸ። ንዝያዳ ግዜን ጻዕርን'ኳ እንተወሰደ ጽኑዕ መሰረት ንምንባር ጽዒሩ ሰርሐ። ጽኑዕ መሰረት ዝኸበረ ክፋል ምዃኑ ፈለጠ።</div>
+    <div class="amharic-text">ኢየሱስ ስለ ሁለት ገንቢዎች ታሪክ ነገረ። ጥበበኛው ገንቢ ጠልቆ ቆፍሮ ቤቱን በጠንካራ አለት ላይ ሠራ። ተጨማሪ ጊዜና ጥረት ቢወስድም ጠንካራ መሠረት ለመጣል ጠንክሮ ሠራ። ጠንካራ መሠረት በጣም አስፈላጊው ክፍል እንደሆነ አወቀ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">A strong foundation takes effort but is worth it.</p>
+        <p class="lesson-tigrinya">ጽኑዕ መሰረት ጻዕሪ ይሓትት ግና ዋግኡ ኣለዎ።</p>
+        <p class="lesson-amharic">ጠንካራ መሠረት ጥረት ይጠይቃል ግን ዋጋ አለው።</p>
+    </div>
+    <span class="page-number">Page 39</span>
+</div>
+
+<div class="page story-page theme-amber">
+    <span class="bible-ref">Matthew 7:26</span>
+    <h2 class="story-title">The Wise and Foolish Builders</h2>
+    <p class="story-title-alt">ጥበበኛን ዓሻን ሃነጽቲ • ጥበበኛና ሞኝ ገንቢዎች</p>
+    <div class="story-illustration">🏖️🏠⏱️</div>
+    <p class="story-text"><span class="scene-number">2</span>The foolish builder was in a hurry. He built his house quickly on the soft sand without digging a foundation. It was easy and fast, and his house looked just as nice as the wise man's house. He thought he had made the smarter choice.</p>
+    <div class="tigrinya-text">ዓሻ ሃናጻይ ተሃዊኹ ነበረ። መሰረት ከይኵዓተ ኣብ ልስሉስ ሑጻ ገዝኡ ቀልጢፉ ሃነጸ። ቀሊልን ቅልጡፍን ነበረ ገዝኡ ድማ ከም ናይ ጥበበኛ ሰብ ገዛ ጽቡቕ ይመስል ነበረ። ዝበለጸ ምርጫ ከም ዝገበረ ሓሰበ።</div>
+    <div class="amharic-text">ሞኙ ገንቢ ቸኩሎ ነበር። መሠረት ሳይቆፍር በለስላሳ አሸዋ ላይ ቤቱን በፍጥነት ሠራ። ቀላልና ፈጣን ነበር ቤቱም እንደ ጥበበኛው ሰው ቤት ያማረ ይመስል ነበር። የተሻለ ምርጫ እንዳደረገ አሰበ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Taking shortcuts may seem easy but can lead to trouble.</p>
+        <p class="lesson-tigrinya">ሓጺር መገዲ ምሓዝ ቀሊል ይመስል ናብ ጸገም ግና ክመርሕ ይኽእል።</p>
+        <p class="lesson-amharic">አቋራጭ መንገድ መያዝ ቀላል ይመስላል ግን ወደ ችግር ሊመራ ይችላል።</p>
+    </div>
+    <span class="page-number">Page 40</span>
+</div>
+
+<div class="page story-page theme-amber">
+    <span class="bible-ref">Matthew 7:25, 27</span>
+    <h2 class="story-title">The Wise and Foolish Builders</h2>
+    <p class="story-title-alt">ጥበበኛን ዓሻን ሃነጽቲ • ጥበበኛና ሞኝ ገንቢዎች</p>
+    <div class="story-illustration">⛈️🏠💥</div>
+    <p class="story-text"><span class="scene-number">3</span>Then the storms came! The rain poured, the floods rose, and the winds blew hard against both houses. The wise man's house on the rock stood firm and strong. But the foolish man's house on the sand collapsed with a great crash. Jesus said we should build our lives on His word.</p>
+    <div class="tigrinya-text">ሽዑ ማዕበል መጸ! ዝናብ ወሓዘ ውሒዝ በርቲዑ ንፋስ ኣብ ልዕሊ ክልቲኡ ኣባይቲ ብሓይሊ ነፈሰ። ገዛ ጥበበኛ ሰብ ኣብ ከውሒ ጸኒዑ ደው በለ። ገዛ ዓሻ ሰብ ግና ኣብ ሑጻ ብዓቢ ደሚጹ ፈረሰ። ኢየሱስ ህይወትና ኣብ ቃሉ ክንሃንጽ ከም ዘሎና ተዛረበ።</div>
+    <div class="amharic-text">ከዚያ ማዕበል መጣ! ዝናብ ዘነበ ጎርፍ ጨመረ ነፋስ በሁለቱም ቤቶች ላይ በኃይል ነፈሰ። የጥበበኛው ሰው ቤት በአለት ላይ ጸንቶ ቆመ። የሞኙ ሰው ቤት ግን በአሸዋ ላይ በታላቅ ድምፅ ፈረሰ። ኢየሱስ ሕይወታችንን በቃሉ ላይ ልንሠራ እንደሚገባን ተናገረ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Build your life on God's word and you will stand strong.</p>
+        <p class="lesson-tigrinya">ህይወትካ ኣብ ቃል ኣምላኽ ስርሓዮ ጸኒዕካ ክትቐውም ኢኻ።</p>
+        <p class="lesson-amharic">ሕይወትህን በእግዚአብሔር ቃል ላይ ሥራ ጸንተህ ትቆማለህ።</p>
+    </div>
+    <span class="page-number">Page 41</span>
+</div>
+
+<!-- ==================== STORY 8: ZACCHAEUS MEETS JESUS ==================== -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Luke 19:1-3</span>
+    <h2 class="story-title">Zacchaeus Meets Jesus</h2>
+    <p class="story-title-alt">ዘኬዎስ ንኢየሱስ ይረክብ • ዘኬዎስ ኢየሱስን አገኘ</p>
+    <div class="story-illustration">👨💰📏</div>
+    <p class="story-text"><span class="scene-number">1</span>Zacchaeus was a chief tax collector in Jericho and was very rich. But he had cheated many people out of their money, so no one liked him. He was also very short. One day he heard that Jesus was coming to his town, and he really wanted to see Him.</p>
+    <div class="tigrinya-text">ዘኬዎስ ኣብ ያሪኮ ሓለቓ ተቐበልቲ ቀረጽ ነበረ ኣዝዩ ሃብታም'ውን ነበረ። ንብዙሓት ሰባት ገንዘቦም ስለ ዘታለለ ዝፈትዎ ኣይነበረን። ኣዝዩ ሓጺር'ውን ነበረ። ሓደ መዓልቲ ኢየሱስ ናብ ከተምኡ ይመጽእ ከም ዘሎ ሰሚዑ ክርእዮ ኣዝዩ ደለየ።</div>
+    <div class="amharic-text">ዘኬዎስ በኢያሪኮ ዋና ቀረጥ ሰብሳቢ ነበር እጅግም ሀብታም ነበር። ብዙ ሰዎችን ገንዘባቸውን ስላታለለ የሚወደው አልነበረም። እጅግም አጭር ነበር። አንድ ቀን ኢየሱስ ወደ ከተማው እየመጣ እንደሆነ ሰምቶ ሊያየው እጅግ ፈለገ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">No matter our past mistakes, we can seek to know God.</p>
+        <p class="lesson-tigrinya">ዝሓለፈ ጌጋና ብዘየገድስ ንኣምላኽ ክንፈልጦ ክንደሊ ንኽእል።</p>
+        <p class="lesson-amharic">ያለፈ ስህተታችን ምንም ይሁን እግዚአብሔርን ለማወቅ መፈለግ እንችላለን።</p>
+    </div>
+    <span class="page-number">Page 42</span>
+</div>
+
+<div class="page story-page theme-green">
+    <span class="bible-ref">Luke 19:4-5</span>
+    <h2 class="story-title">Zacchaeus Meets Jesus</h2>
+    <p class="story-title-alt">ዘኬዎስ ንኢየሱስ ይረክብ • ዘኬዎስ ኢየሱስን አገኘ</p>
+    <div class="story-illustration">🌳🧗😲</div>
+    <p class="story-text"><span class="scene-number">2</span>Because he was too short to see over the crowd, Zacchaeus ran ahead and climbed up a sycamore tree. When Jesus reached the spot, He looked up and said 'Zacchaeus, come down immediately. I must stay at your house today.' Zacchaeus was amazed that Jesus knew his name!</p>
+    <div class="tigrinya-text">ካብ ህዝቢ ንላዕሊ ክርኢ ሓጺር ስለ ዝነበረ ዘኬዎስ ቀዲሙ ጎይዩ ኣብ ሹግማ ኦም ደየበ። ኢየሱስ ናብቲ ቦታ ምስ በጽሐ ንላዕሊ ጠሚቱ ዘኬዎስ ሽዑ ውረድ ሎሚ ኣብ ገዛኻ ክሓድር ኣሎኒ በሎ። ዘኬዎስ ኢየሱስ ስሙ ብምፍላጡ ተገረመ!</div>
+    <div class="amharic-text">ከሕዝቡ በላይ ለማየት አጭር ስለነበር ዘኬዎስ ቀድሞ ሮጦ በሾላ ዛፍ ላይ ወጣ። ኢየሱስ ወደ ቦታው ሲደርስ ወደ ላይ ተመልክቶ ዘኬዎስ ወዲያው ውረድ ዛሬ በቤትህ ማደር አለብኝ አለው። ዘኬዎስ ኢየሱስ ስሙን በማወቁ ተገረመ!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Jesus knows each of us by name and wants to be with us.</p>
+        <p class="lesson-tigrinya">ኢየሱስ ንነፍሲ ወከፍና ብስም ይፈልጠና ምሳና ክኸውን ይደሊ።</p>
+        <p class="lesson-amharic">ኢየሱስ እያንዳንዳችንን በስም ያውቀናል ከእኛም ጋር መሆን ይፈልጋል።</p>
+    </div>
+    <span class="page-number">Page 43</span>
+</div>
+
+<div class="page story-page theme-green">
+    <span class="bible-ref">Luke 19:8-10</span>
+    <h2 class="story-title">Zacchaeus Meets Jesus</h2>
+    <p class="story-title-alt">ዘኬዎስ ንኢየሱስ ይረክብ • ዘኬዎስ ኢየሱስን አገኘ</p>
+    <div class="story-illustration">💰🤲❤️</div>
+    <p class="story-text"><span class="scene-number">3</span>Meeting Jesus changed Zacchaeus completely. He stood up and said 'Lord, I will give half of my possessions to the poor, and if I have cheated anyone, I will pay back four times as much!' Jesus said 'Today salvation has come to this house.' Zacchaeus became a new, honest man.</p>
+    <div class="tigrinya-text">ንኢየሱስ ምርካብ ንዘኬዎስ ብምሉእ ቀየሮ። ደው ኢሉ ጐይታ ፍርቂ ንብረተይ ንድኻታት ክህብ እየ ንዝኾነ ሰብ ኣታሊለ እንተኾይነ ኣርባዕተ ዕጽፊ ክመልስ እየ! በለ። ኢየሱስ ሎሚ ናብዚ ገዛ ምድሓን መጺኡ በለ። ዘኬዎስ ሓድሽ ቅኑዕ ሰብ ኮነ።</div>
+    <div class="amharic-text">ኢየሱስን ማግኘት ዘኬዎስን ሙሉ በሙሉ ለወጠው። ቆሞ ጌታ ግማሽ ንብረቴን ለድሆች እሰጣለሁ ማንንም አታልዬ ከሆነ አራት እጥፍ እመልሳለሁ! አለ። ኢየሱስ ዛሬ ወደዚህ ቤት ድነት መጣ አለ። ዘኬዎስ አዲስ ታማኝ ሰው ሆነ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Meeting Jesus changes our hearts and makes us honest.</p>
+        <p class="lesson-tigrinya">ንኢየሱስ ምርካብ ልብና ይቕይር ቅኑዓት ድማ ይገብረና።</p>
+        <p class="lesson-amharic">ኢየሱስን ማግኘት ልባችንን ይለውጣል ታማኞችም ያደርገናል።</p>
+    </div>
+    <span class="page-number">Page 44</span>
+</div>
+
+<!-- ==================== STORY 9: ESTHER SAVES HER PEOPLE ==================== -->
+<div class="page story-page theme-purple">
+    <span class="bible-ref">Esther 2:17</span>
+    <h2 class="story-title">Esther Saves Her People</h2>
+    <p class="story-title-alt">ኣስቴር ንህዝባ ተድሕን • አስቴር ሕዝቧን አዳነች</p>
+    <div class="story-illustration">👑💜✨</div>
+    <p class="story-text"><span class="scene-number">1</span>Esther was a young Jewish woman living in Persia. She was kind and beautiful. The king chose her to become the new queen, though he did not know she was Jewish. God had placed Esther in the palace for a very special purpose that she did not yet understand.</p>
+    <div class="tigrinya-text">ኣስቴር ኣብ ፋርስ እትነብር መንእሰይ ኣይሁዳዊት ጓል ኣንስተይቲ ነበረት። ሕያዋይትን ጽብቕትን ነበረት። ንጉስ ኣይሁዳዊት ምዃና ከይፈለጠ ሓዳስ ንግስቲ ክትከውን መረጻ። ኣምላኽ ንኣስቴር ገና ንዘይተረደኣቶ ኣዝዩ ፍሉይ ዓላማ ኣብ ቤተ መንግስቲ ኣቐመጣ።</div>
+    <div class="amharic-text">አስቴር በፋርስ የምትኖር ወጣት አይሁዳዊት ሴት ነበረች። ደግና ውብ ነበረች። ንጉሡ አይሁዳዊት መሆኗን ሳያውቅ አዲስ ንግሥት እንድትሆን መረጣት። እግዚአብሔር አስቴርን ገና ላልተረዳችው እጅግ ልዩ ዓላማ በቤተ መንግሥት አስቀመጣት።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God places us where we are for a special purpose.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ንፍሉይ ዓላማ ኣብ ዘለናዮ የቐምጠና።</p>
+        <p class="lesson-amharic">እግዚአብሔር ለልዩ ዓላማ ባለንበት ያስቀምጠናል።</p>
+    </div>
+    <span class="page-number">Page 45</span>
+</div>
+
+<div class="page story-page theme-purple">
+    <span class="bible-ref">Esther 3:8-9</span>
+    <h2 class="story-title">Esther Saves Her People</h2>
+    <p class="story-title-alt">ኣስቴር ንህዝባ ተድሕን • አስቴር ሕዝቧን አዳነች</p>
+    <div class="story-illustration">😠📜⚠️</div>
+    <p class="story-text"><span class="scene-number">2</span>A wicked man named Haman hated the Jewish people. He tricked the king into signing a law to destroy all the Jews in the kingdom. Esther's cousin Mordecai told her 'Perhaps you were made queen for such a time as this — to save your people!'</p>
+    <div class="tigrinya-text">ሃማን ዝብሃል እኩይ ሰብ ንኣይሁድ ህዝቢ ጸልኦም። ንንጉስ ኣታሊሉ ኩሎም ኣይሁድ ኣብ መንግስቲ ንምጥፋእ ሕጊ ከፍርም ገበሮ። ወዲ ሓወቦኣ መርዶክዮስ ንኣስቴር ምናልባት ንኸምዚ ግዜ ንግስቲ ዝኾንኪ — ንህዝብኺ ንምድሓን በላ።</div>
+    <div class="amharic-text">ሃማን የተባለ ክፉ ሰው የአይሁድን ሕዝብ ጠላ። ንጉሡን አታሎ በመንግሥቱ ያሉ አይሁዶችን ሁሉ ለማጥፋት ሕግ እንዲፈርም አደረገ። የአስቴር የአጎት ልጅ መርዶክዮስ ለአስቴር ምናልባት ለእንዲህ ያለ ጊዜ ንግሥት የሆንሽ — ሕዝብሽን ለማዳን ነው አላት።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God can use us at just the right time to help others.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ንኻልኦት ንምሕጋዝ ኣብ ቅኑዕ ግዜ ክጥቀመልና ይኽእል።</p>
+        <p class="lesson-amharic">እግዚአብሔር ሌሎችን ለመርዳት በትክክለኛው ጊዜ ሊጠቀመን ይችላል።</p>
+    </div>
+    <span class="page-number">Page 46</span>
+</div>
+
+<div class="page story-page theme-purple">
+    <span class="bible-ref">Esther 4:16, 7:3-6</span>
+    <h2 class="story-title">Esther Saves Her People</h2>
+    <p class="story-title-alt">ኣስቴር ንህዝባ ተድሕን • አስቴር ሕዝቧን አዳነች</p>
+    <div class="story-illustration">🙏👑🛡️</div>
+    <p class="story-text"><span class="scene-number">3</span>Esther fasted and prayed for three days. Then she bravely went before the king, even though it could cost her life. She revealed Haman's evil plan and asked the king to save her people. The king was furious with Haman, and the Jewish people were saved! Esther's courage rescued a whole nation.</p>
+    <div class="tigrinya-text">ኣስቴር ንሰለስተ መዓልቲ ጾመትን ጸለየትን። ድሕሪኡ ህይወታ'ኳ ከኽፍላ እንተኸኣለ ብትብዓት ቅድሚ ንጉስ ቀረበት። እኩይ መደብ ሃማን ገለጸት ንጉስ ንህዝባ ከድሕን ለመነት። ንጉስ ኣብ ሃማን ኣዝዩ ተቖጥዐ ኣይሁድ ህዝቢ ድማ ደሓኑ! ትብዓት ኣስቴር ንምሉእ ህዝቢ ኣድሓነ።</div>
+    <div class="amharic-text">አስቴር ለሦስት ቀን ጾመችና ጸለየች። ከዚያም ሕይወቷን ሊያስከፍላት ቢችልም በድፍረት ወደ ንጉሡ ቀረበች። የሃማንን ክፉ ዕቅድ ገለጠች ንጉሡ ሕዝቧን እንዲያድን ለመነች። ንጉሡ በሃማን ላይ እጅግ ተቆጣ የአይሁድም ሕዝብ ዳነ! የአስቴር ድፍረት መላውን ሕዝብ አዳነ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Courage and prayer can help us do brave things for others.</p>
+        <p class="lesson-tigrinya">ትብዓትን ጸሎትን ንኻልኦት ተባዕ ነገር ክንገብር ይሕግዙና።</p>
+        <p class="lesson-amharic">ድፍረትና ጸሎት ለሌሎች ደፋር ነገር ለማድረግ ይረዱናል።</p>
+    </div>
+    <span class="page-number">Page 47</span>
+</div>
+
+<!-- ==================== STORY 10: THE WIDOW'S OFFERING ==================== -->
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Mark 12:41-42</span>
+    <h2 class="story-title">The Widow's Offering</h2>
+    <p class="story-title-alt">መባእ መበለት • የመበለቲቱ ስጦታ</p>
+    <div class="story-illustration">🏛️👀🪙</div>
+    <p class="story-text"><span class="scene-number">1</span>Jesus sat near the temple treasury and watched people putting in their offerings. Many rich people threw in large amounts of money. Then a poor widow came and put in only two very small copper coins — worth almost nothing. But Jesus noticed her.</p>
+    <div class="tigrinya-text">ኢየሱስ ኣብ ጥቓ ግምጃ ቤተ መቕደስ ኮፍ ኢሉ ሰባት መባኦም ከእትዉ ይዕዘብ ነበረ። ብዙሓት ሃብታማት ብዙሕ ገንዘብ ኣእተዉ። ሽዑ ድኽይቲ መበለት መጺኣ ክልተ ኣዝዩ ንኣሽቱ ቅርሺ ጥራይ — ዳርጋ ዋጋ ዘይብለን ኣእተወት። ኢየሱስ ግና ኣስተውዓላ።</div>
+    <div class="amharic-text">ኢየሱስ በቤተ መቅደሱ ግምጃ ቤት አጠገብ ተቀምጦ ሰዎች መባቸውን ሲያስገቡ ይመለከት ነበር። ብዙ ሀብታሞች ብዙ ገንዘብ ጣሉ። ከዚያ ደሃ መበለት መጥታ ሁለት እጅግ ትናንሽ የመዳብ ሳንቲሞች ብቻ — ምንም የማይረቡ አስገባች። ኢየሱስ ግን አስተዋላት።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God sees and values what others may overlook.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ካልኦት ዝንዕቕዎ ይርኢ የኽብሮ ድማ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ሌሎች የሚንቁትን ያያል ያከብረዋልም።</p>
+    </div>
+    <span class="page-number">Page 48</span>
+</div>
+
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Mark 12:43-44</span>
+    <h2 class="story-title">The Widow's Offering</h2>
+    <p class="story-title-alt">መባእ መበለት • የመበለቲቱ ስጦታ</p>
+    <div class="story-illustration">💗🙌✨</div>
+    <p class="story-text"><span class="scene-number">2</span>Jesus called His disciples and said 'This poor widow has put in more than all the others! They gave from their extra money, but she gave everything she had to live on.' God does not measure our giving by the amount, but by the love and trust behind it.</p>
+    <div class="tigrinya-text">ኢየሱስ ንደቀ መዛሙርቱ ጸዊዑ እዛ ድኽይቲ መበለት ካብ ኩሎም ንላዕሊ ኣእትያ! ንሳቶም ካብ ተረፍ ገንዘቦም ሃቡ ንሳ ግና ትነብረሉ ኩሉ ሃበት በለ። ኣምላኽ ዝሃብናዮ ብመጠን ዘይኮነ ብድሕሪኡ ዘሎ ፍቕርን እምነትን ይመዝኖ።</div>
+    <div class="amharic-text">ኢየሱስ ደቀ መዛሙርቱን ጠርቶ ይህች ደሃ መበለት ከሁሉም በላይ አስገባች! እነሱ ከትርፍ ገንዘባቸው ሰጡ እሷ ግን የምትኖርበትን ሁሉ ሰጠች አለ። እግዚአብሔር የምንሰጠውን በመጠን ሳይሆን ከጀርባው ባለው ፍቅርና እምነት ይለካዋል።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God values the heart behind our giving, not the amount.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ዝርኢ ዝሃብናዮ ዘይኮነ ልቢ ድሕሪኡ ዘሎ እዩ።</p>
+        <p class="lesson-amharic">እግዚአብሔር የሚያየው መጠኑን ሳይሆን ከስጦታው ጀርባ ያለውን ልብ ነው።</p>
+    </div>
+    <span class="page-number">Page 49</span>
+</div>
+
+<!-- ==================== STORY 11: GIDEON'S SMALL ARMY ==================== -->
+<div class="page story-page theme-red">
+    <span class="bible-ref">Judges 6:12-14</span>
+    <h2 class="story-title">Gideon's Small Army</h2>
+    <p class="story-title-alt">ንእሽቶ ሰራዊት ጊድዮን • የጌዴዎን ትንሽ ሰራዊት</p>
+    <div class="story-illustration">🌾😨💪</div>
+    <p class="story-text"><span class="scene-number">1</span>The Midianites were oppressing Israel, stealing their crops. Gideon was hiding and threshing wheat in fear when an angel appeared and said 'The Lord is with you, mighty warrior!' Gideon felt weak and afraid, but God was calling him to save Israel.</p>
+    <div class="tigrinya-text">ምድያናውያን ንእስራኤል የጭቁኑ እኽሎም ይሰርቁ ነበሩ። ጊድዮን ተሓቢኡ ብፍርሒ ስርናይ ይኸዐ ከሎ መልኣኽ ተገሊጹ ጐይታ ምሳኻ እዩ ሓያል ተዋጋኢ! በሎ። ጊድዮን ድኹምን ፍሩህን ተሰምዖ ኣምላኽ ግና ንእስራኤል ከድሕን ይጽውዖ ነበረ።</div>
+    <div class="amharic-text">ምድያናውያን እስራኤልን ይጨቁኑ ሰብላቸውን ይሰርቁ ነበር። ጌዴዎን ተደብቆ በፍርሃት ስንዴ ሲወቃ መልአክ ተገልጦ ጌታ ከአንተ ጋር ነው ኃያል ተዋጊ! አለው። ጌዴዎን ደካማና ፈሪ ተሰማው እግዚአብሔር ግን እስራኤልን ሊያድን ይጠራው ነበር።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God sees potential in us even when we feel weak.</p>
+        <p class="lesson-tigrinya">ድኹማት ኮይኑ ክንስምዓና ከሎ'ውን ኣምላኽ ዓቕምና ይርኢ።</p>
+        <p class="lesson-amharic">ደካማ ሲሰማንም እግዚአብሔር በእኛ ውስጥ ያለውን አቅም ያያል።</p>
+    </div>
+    <span class="page-number">Page 50</span>
+</div>
+
+<div class="page story-page theme-red">
+    <span class="bible-ref">Judges 7:2-7</span>
+    <h2 class="story-title">Gideon's Small Army</h2>
+    <p class="story-title-alt">ንእሽቶ ሰራዊት ጊድዮን • የጌዴዎን ትንሽ ሰራዊት</p>
+    <div class="story-illustration">👥➡️👤💧</div>
+    <p class="story-text"><span class="scene-number">2</span>Gideon gathered 32,000 soldiers. But God said 'You have too many!' God reduced the army again and again, until only 300 men were left. God wanted Israel to know that victory comes from Him, not from the size of an army.</p>
+    <div class="tigrinya-text">ጊድዮን 32,000 ወተሃደራት ኣከበ። ኣምላኽ ግና ኣዝዮም ብዙሓት ኢኻ ዘለካ! በለ። ኣምላኽ ንሰራዊት ደጋጊሙ ኣውሓዶ ክሳብ 300 ሰባት ጥራይ ዝተርፉ። ኣምላኽ ዓወት ካብ ዕብየት ሰራዊት ዘይኮነ ካብኡ ከም ዝመጽእ እስራኤል ክፈልጡ ደለየ።</div>
+    <div class="amharic-text">ጌዴዎን 32,000 ወታደሮች አሰባሰበ። እግዚአብሔር ግን በጣም ብዙ ናቸው ያሉህ! አለ። እግዚአብሔር ሰራዊቱን ደጋግሞ ቀነሰ 300 ሰዎች ብቻ እስኪቀሩ። እግዚአብሔር ድል ከሰራዊቱ ብዛት ሳይሆን ከእርሱ እንደሚመጣ እስራኤል እንዲያውቁ ፈለገ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Victory comes from God, not from our own strength or numbers.</p>
+        <p class="lesson-tigrinya">ዓወት ካብ ኣምላኽ እዩ ካብ ሓይልናን ቁጽርናን ኣይኮነን።</p>
+        <p class="lesson-amharic">ድል ከእግዚአብሔር ነው ከጉልበታችንና ከቁጥራችን አይደለም።</p>
+    </div>
+    <span class="page-number">Page 51</span>
+</div>
+
+<div class="page story-page theme-red">
+    <span class="bible-ref">Judges 7:19-22</span>
+    <h2 class="story-title">Gideon's Small Army</h2>
+    <p class="story-title-alt">ንእሽቶ ሰራዊት ጊድዮን • የጌዴዎን ትንሽ ሰራዊት</p>
+    <div class="story-illustration">🎺🔥🏆</div>
+    <p class="story-text"><span class="scene-number">3</span>That night, Gideon's 300 men surrounded the enemy camp. Instead of swords, they held trumpets and torches hidden in jars. At Gideon's signal, they broke the jars, blew the trumpets, and shouted! The enemy panicked in confusion and fled. God gave a mighty victory with just 300 men!</p>
+    <div class="tigrinya-text">በዛ ለይቲ 300 ሰባት ጊድዮን ንሰፈር ጸላኢ ከበብዎ። ኣብ ክንዲ ሰይፊ መለኸትን ኣብ ኣቕሓ ዝተሓብአ ፋናን ሒዞም። ጊድዮን ምልክት ምስ ሃበ ኣቕሓ ሰበሩ መለኸት ነፍሑ ጨርሑ! ጸላኢ ብምድንጋር ሰምቢዱ ሃደመ። ኣምላኽ ብ300 ሰባት ጥራይ ዓቢ ዓወት ሃበ!</div>
+    <div class="amharic-text">በዚያ ሌሊት የጌዴዎን 300 ሰዎች የጠላትን ሰፈር ከበቡ። ከሰይፍ ፈንታ መለከትና በማሰሮ የተደበቀ ችቦ ያዙ። ጌዴዎን ምልክት ሲሰጥ ማሰሮዎቹን ሰበሩ መለከት ነፉ ጮሁ! ጠላት በመደናገር ደንግጦ ሸሸ። እግዚአብሔር በ300 ሰዎች ብቻ ታላቅ ድል ሰጠ!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God's strength is made perfect in our weakness.</p>
+        <p class="lesson-tigrinya">ሓይሊ ኣምላኽ ኣብ ድኻምና ይፍጸም።</p>
+        <p class="lesson-amharic">የእግዚአብሔር ኃይል በድካማችን ይፈጸማል።</p>
+    </div>
+    <span class="page-number">Page 52</span>
+</div>
+
+<!-- ==================== STORY 12: JESUS WASHES THE DISCIPLES' FEET ==================== -->
+<div class="page story-page theme-indigo">
+    <span class="bible-ref">John 13:3-5</span>
+    <h2 class="story-title">Jesus Washes the Disciples' Feet</h2>
+    <p class="story-title-alt">ኢየሱስ ኣእጋር ደቀ መዛሙርቱ ይሕጸብ • ኢየሱስ የደቀ መዛሙርቱን እግር ታጠበ</p>
+    <div class="story-illustration">🫗🦶💧</div>
+    <p class="story-text"><span class="scene-number">1</span>On the night before He died, Jesus shared a meal with His disciples. Then He got up, wrapped a towel around His waist, poured water into a basin, and began to wash His disciples' dusty feet — a job usually done by the lowest servant.</p>
+    <div class="tigrinya-text">ቅድሚ ሞቱ ብዘላ ለይቲ ኢየሱስ ምስ ደቀ መዛሙርቱ ድራር ተማቐለ። ድሕሪኡ ተንሲኡ ሽጎማኖ ኣብ ሕቚኡ ዓጢቚ ማይ ኣብ ገበል ኣፍሲሱ ዓቢር ኣእጋር ደቀ መዛሙርቱ ክሓጽብ ጀመረ — መብዛሕትኡ ግዜ ብዝተሓተ ኣገልጋሊ ዝግበር ስራሕ።</div>
+    <div class="amharic-text">ከመሞቱ በፊት ባለው ሌሊት ኢየሱስ ከደቀ መዛሙርቱ ጋር እራት ተካፈለ። ከዚያ ተነስቶ ፎጣ በወገቡ ታጥቆ ውሃ በሰሃን አፍስሶ የደቀ መዛሙርቱን አቧራማ እግር ማጠብ ጀመረ — ብዙ ጊዜ በዝቅተኛ አገልጋይ የሚደረግ ሥራ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">No task is too humble when we serve others with love.</p>
+        <p class="lesson-tigrinya">ንኻልኦት ብፍቕሪ ክነገልግል ከሎና ዝኾነ ስራሕ ትሑት ኣይኮነን።</p>
+        <p class="lesson-amharic">ሌሎችን በፍቅር ስናገለግል ምንም ሥራ ዝቅተኛ አይደለም።</p>
+    </div>
+    <span class="page-number">Page 53</span>
+</div>
+
+<div class="page story-page theme-indigo">
+    <span class="bible-ref">John 13:12-15</span>
+    <h2 class="story-title">Jesus Washes the Disciples' Feet</h2>
+    <p class="story-title-alt">ኢየሱስ ኣእጋር ደቀ መዛሙርቱ ይሕጸብ • ኢየሱስ የደቀ መዛሙርቱን እግር ታጠበ</p>
+    <div class="story-illustration">🙇‍♂️❤️🌟</div>
+    <p class="story-text"><span class="scene-number">2</span>When He finished, Jesus asked 'Do you understand what I have done? I am your Lord and Teacher, yet I washed your feet. So you also should serve one another. I have given you an example to follow.' The greatest of all chose to serve, teaching us true greatness is in serving.</p>
+    <div class="tigrinya-text">ምስ ወድአ ኢየሱስ ዝገበርክዎ ተረዲኡኩም ዶ? ኣነ ጐይታኹምን መምህርኩምን ክነሰይ ኣእጋርኩም ሓጺበ። ስለዚ ንስኻትኩም'ውን ንሓድሕድኩም ኣገልግሉ። ክትስዕብዎ ኣብነት ሂበኩም ኣለኹ በለ። እቲ ዝዓበየ ኩሉ ከገልግል መረጸ ሓቀኛ ዕቤት ኣብ ምግልጋል ምዃኑ መሃረና።</div>
+    <div class="amharic-text">ሲጨርስ ኢየሱስ ያደረግሁትን ተረዳችሁ? እኔ ጌታችሁና መምህራችሁ ሆኜ እግራችሁን አጠብኩ። ስለዚህ እናንተም እርስ በርሳችሁ አገልግሉ። ልትከተሉት ምሳሌ ሰጥቻችኋለሁ አለ። ከሁሉ የሚበልጠው ሊያገለግል መረጠ እውነተኛ ታላቅነት ማገልገል እንደሆነ አስተማረን።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">True greatness is found in serving others humbly.</p>
+        <p class="lesson-tigrinya">ሓቀኛ ዕቤት ንኻልኦት ብትሕትና ኣብ ምግልጋል ይርከብ።</p>
+        <p class="lesson-amharic">እውነተኛ ታላቅነት ሌሎችን በትሕትና ማገልገል ነው።</p>
+    </div>
+    <span class="page-number">Page 54</span>
+</div>
+
+<!-- ==================== STORY 13: SAMUEL HEARS GOD'S VOICE ==================== -->
+<div class="page story-page theme-blue">
+    <span class="bible-ref">1 Samuel 3:1-4</span>
+    <h2 class="story-title">Samuel Hears God's Voice</h2>
+    <p class="story-title-alt">ሳሙኤል ድምጺ ኣምላኽ ይሰምዕ • ሳሙኤል የእግዚአብሔርን ድምጽ ሰማ</p>
+    <div class="story-illustration">🛏️🌙👂</div>
+    <p class="story-text"><span class="scene-number">1</span>Young Samuel lived and served in the temple with the priest Eli. One night, as Samuel was lying down to sleep, he heard a voice calling his name. He ran to Eli and said 'Here I am, you called me.' But Eli said 'I did not call you. Go back to sleep.'</p>
+    <div class="tigrinya-text">ንእሽቶ ሳሙኤል ምስ ካህን ዔሊ ኣብ ቤተ መቕደስ ይነብርን የገልግልን ነበረ። ሓደ ለይቲ ሳሙኤል ክድቅስ ተጋዲሙ ከሎ ስሙ ዝጽውዕ ድምጺ ሰምዐ። ናብ ዔሊ ጎይዩ እኔኹ ጸዊዕካኒ በለ። ዔሊ ግና ኣይጸዋዕኩኻን ተመሊስካ ደቅስ በለ።</div>
+    <div class="amharic-text">ታዳጊው ሳሙኤል ከካህኑ ዔሊ ጋር በቤተ መቅደስ ይኖርና ያገለግል ነበር። አንድ ሌሊት ሳሙኤል ሊተኛ ተኝቶ ሳለ ስሙን የሚጠራ ድምጽ ሰማ። ወደ ዔሊ ሮጦ እነሆኝ ጠራኸኝ አለ። ዔሊ ግን አልጠራሁህም ተመልሰህ ተኛ አለ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God can speak to anyone, even the young.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ንዝኾነ ሰብ ንንኣሽቱ'ውን ክዛረብ ይኽእል።</p>
+        <p class="lesson-amharic">እግዚአብሔር ለማንም ለታናናሾችም ሊናገር ይችላል።</p>
+    </div>
+    <span class="page-number">Page 55</span>
+</div>
+
+<div class="page story-page theme-blue">
+    <span class="bible-ref">1 Samuel 3:8-10</span>
+    <h2 class="story-title">Samuel Hears God's Voice</h2>
+    <p class="story-title-alt">ሳሙኤል ድምጺ ኣምላኽ ይሰምዕ • ሳሙኤል የእግዚአብሔርን ድምጽ ሰማ</p>
+    <div class="story-illustration">🙏✨💬</div>
+    <p class="story-text"><span class="scene-number">2</span>This happened three times! Then Eli understood it was God calling Samuel. He told Samuel 'If He calls again, say: Speak, Lord, for your servant is listening.' When God called again, Samuel answered just as Eli said. God then spoke to Samuel, and Samuel became a great prophet.</p>
+    <div class="tigrinya-text">እዚ ሰለስተ ግዜ ኮነ! ሽዑ ዔሊ ኣምላኽ ንሳሙኤል ይጽውዖ ከም ዘሎ ተረድአ። ንሳሙኤል ከም ብሓድሽ እንተጸዊዑ ተዛረብ ጐይታ ኣገልጋሊኻ ይሰምዕ ኣሎ በሎ በሎ። ኣምላኽ ከም ብሓድሽ ምስ ጸውዖ ሳሙኤል ከምቲ ዔሊ ዝበሎ መለሰ። ኣምላኽ ሽዑ ንሳሙኤል ተዛረቦ ሳሙኤል ድማ ዓቢ ነብዪ ኮነ።</div>
+    <div class="amharic-text">ይህ ሦስት ጊዜ ሆነ! ከዚያ ዔሊ እግዚአብሔር ሳሙኤልን እየጠራው እንደሆነ ተረዳ። ሳሙኤልን እንደገና ቢጠራህ ተናገር ጌታ አገልጋይህ ይሰማል በል አለው። እግዚአብሔር እንደገና ሲጠራው ሳሙኤል ዔሊ እንዳለው መለሰ። እግዚአብሔር ከዚያ ሳሙኤልን ተናገረው ሳሙኤልም ታላቅ ነቢይ ሆነ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God speaks to those who are willing to listen and obey.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ክሰምዑን ክእዘዙን ንዝደልዩ ይዛረብ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ለመስማትና ለመታዘዝ ለሚፈልጉ ይናገራል።</p>
+    </div>
+    <span class="page-number">Page 56</span>
+</div>
+
+<!-- ==================== STORY 14: THE TOWER OF BABEL ==================== -->
+<div class="page story-page theme-amber">
+    <span class="bible-ref">Genesis 11:1-4</span>
+    <h2 class="story-title">The Tower of Babel</h2>
+    <p class="story-title-alt">ግምቢ ባቤል • የባቤል ግንብ</p>
+    <div class="story-illustration">🗼🧱👷</div>
+    <p class="story-text"><span class="scene-number">1</span>Long ago, all people spoke one language. They decided to build a giant tower reaching up to the heavens to make themselves famous. They wanted to be great without God. Their hearts were full of pride, and they forgot to honor the Lord.</p>
+    <div class="tigrinya-text">ቀደም ኩሎም ሰባት ሓደ ቋንቋ ይዛረቡ ነበሩ። ንርእሶም ንምዝኽካር ናብ ሰማይ ዝበጽሕ ግዙፍ ግምቢ ክሃንጹ ወሰኑ። ብዘይ ኣምላኽ ዓበይቲ ክዀኑ ደለዩ። ልቦም ብትዕቢት መሊኡ ንጐይታ ከኽብሩ ረስዑ።</div>
+    <div class="amharic-text">ከረጅም ጊዜ በፊት ሰዎች ሁሉ አንድ ቋንቋ ይናገሩ ነበር። ራሳቸውን ለማስጠራት ወደ ሰማይ የሚደርስ ግዙፍ ግንብ ለመሥራት ወሰኑ። ያለ እግዚአብሔር ታላቅ መሆን ፈለጉ። ልባቸው በትዕቢት ተሞላ ጌታን ማክበር ረሱ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Pride makes us forget to honor and depend on God.</p>
+        <p class="lesson-tigrinya">ትዕቢት ንኣምላኽ ከነኽብሮን ክንምርኮሶን ከም ንርስዕ ይገብር።</p>
+        <p class="lesson-amharic">ትዕቢት እግዚአብሔርን ማክበርና መደገፍ እንድንረሳ ያደርገናል።</p>
+    </div>
+    <span class="page-number">Page 57</span>
+</div>
+
+<div class="page story-page theme-amber">
+    <span class="bible-ref">Genesis 11:5-9</span>
+    <h2 class="story-title">The Tower of Babel</h2>
+    <p class="story-title-alt">ግምቢ ባቤል • የባቤል ግንብ</p>
+    <div class="story-illustration">🗣️❓🌍</div>
+    <p class="story-text"><span class="scene-number">2</span>God saw their prideful plan. So He confused their language so they could no longer understand one another. Unable to communicate, they stopped building the tower and scattered across the whole earth. Pride separates, but humility brings us together with God and each other.</p>
+    <div class="tigrinya-text">ኣምላኽ ትዕቢተኛ መደቦም ረኣየ። ስለዚ ንሓድሕዶም ከይርድኡ ቋንቋኦም ኣደናገሮ። ክረዳድኡ ስለ ዘይከኣሉ ግምቢ ምህናጽ ኣቋረጹ ኣብ ኩላ ምድሪ ተበታተኑ። ትዕቢት ይፈላሊ ትሕትና ግና ምስ ኣምላኽን ምስ ንሓድሕድናን የቀራርበና።</div>
+    <div class="amharic-text">እግዚአብሔር ትዕቢተኛ ዕቅዳቸውን አየ። ስለዚህ እርስ በርሳቸው እንዳይግባቡ ቋንቋቸውን አምታታ። መግባባት ስላልቻሉ ግንቡን መሥራት አቆሙ በምድር ሁሉ ተበተኑ። ትዕቢት ይለያያል ትሕትና ግን ከእግዚአብሔርና እርስ በርሳችን ያቀራርበናል።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Pride leads to confusion; humility leads to unity.</p>
+        <p class="lesson-tigrinya">ትዕቢት ናብ ምድንጋር ትሕትና ናብ ሕብረት ይመርሕ።</p>
+        <p class="lesson-amharic">ትዕቢት ወደ ግራ መጋባት ትሕትና ወደ አንድነት ይመራል።</p>
+    </div>
+    <span class="page-number">Page 58</span>
+</div>
+
+<!-- ==================== STORY 15: JESUS WALKS ON WATER ==================== -->
+<div class="page story-page theme-cyan">
+    <span class="bible-ref">Matthew 14:22-25</span>
+    <h2 class="story-title">Jesus Walks on Water</h2>
+    <p class="story-title-alt">ኢየሱስ ኣብ ልዕሊ ማይ ይኸይድ • ኢየሱስ በውሃ ላይ ሄደ</p>
+    <div class="story-illustration">⛵🌊🌙</div>
+    <p class="story-text"><span class="scene-number">1</span>The disciples were crossing the lake in a boat at night when a strong wind stirred up the waves. They were struggling and afraid. Then, in the darkest hour, they saw Jesus walking toward them on top of the water! At first they were terrified, thinking He was a ghost.</p>
+    <div class="tigrinya-text">ደቀ መዛሙርቲ ብለይቲ ብጃልባ ቀላይ ይሰግሩ ከለዉ ሓያል ንፋስ ማዕበል ኣላዓዓለ። ይቃለሱን ይፈርሁን ነበሩ። ሽዑ ኣብ ዝጸልመተ ሰዓት ኢየሱስ ኣብ ልዕሊ ማይ ናባቶም ክኸይድ ረኣዩ! መጀመርታ መንፈስ መሲልዎም ፈርሁ።</div>
+    <div class="amharic-text">ደቀ መዛሙርቱ በሌሊት በጀልባ ሐይቁን ሲሻገሩ ኃይለኛ ነፋስ ማዕበሉን አናወጠ። ይታገሉና ይፈሩ ነበር። ከዚያ በጨለማው ሰዓት ኢየሱስ በውሃ ላይ ወደ እነሱ ሲመጣ አዩ! መጀመሪያ መንፈስ መስሏቸው ፈሩ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Jesus comes to us even in our darkest, hardest moments.</p>
+        <p class="lesson-tigrinya">ኢየሱስ ኣብ ዝጸልመተን ዝኸበደን ህሞትና'ውን ናባና ይመጽእ።</p>
+        <p class="lesson-amharic">ኢየሱስ በጨለመብንና በከበደን ጊዜም ወደ እኛ ይመጣል።</p>
+    </div>
+    <span class="page-number">Page 59</span>
+</div>
+
+<div class="page story-page theme-cyan">
+    <span class="bible-ref">Matthew 14:28-31</span>
+    <h2 class="story-title">Jesus Walks on Water</h2>
+    <p class="story-title-alt">ኢየሱስ ኣብ ልዕሊ ማይ ይኸይድ • ኢየሱስ በውሃ ላይ ሄደ</p>
+    <div class="story-illustration">🚶‍♂️🌊🤝</div>
+    <p class="story-text"><span class="scene-number">2</span>Peter said 'Lord, if it's you, tell me to come to you on the water.' Jesus said 'Come!' Peter stepped out and walked on the water! But when he saw the wind, he became afraid and began to sink. He cried 'Lord, save me!' Jesus immediately reached out and caught him.</p>
+    <div class="tigrinya-text">ጴጥሮስ ጐይታ ንስኻ እንተኾንካ ኣብ ልዕሊ ማይ ናባኻ ክመጽእ ንገረኒ በለ። ኢየሱስ ንዓ! በለ። ጴጥሮስ ወጺኡ ኣብ ልዕሊ ማይ ከደ! ንፋስ ምስ ረኣየ ግና ፈሪሁ ክጠፍእ ጀመረ። ጐይታ ኣድሕነኒ! ኢሉ ጨርሐ። ኢየሱስ ሽዑ ኢዱ ዘርጊሑ ሓዞ።</div>
+    <div class="amharic-text">ጴጥሮስ ጌታ አንተ ከሆንክ በውሃ ላይ ወደ አንተ እንድመጣ ንገረኝ አለ። ኢየሱስ ና! አለ። ጴጥሮስ ወጥቶ በውሃ ላይ ሄደ! ነፋሱን ሲያይ ግን ፈርቶ ሊሰጥም ጀመረ። ጌታ አድነኝ! ብሎ ጮኸ። ኢየሱስ ወዲያው እጁን ዘርግቶ ያዘው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Keep your eyes on Jesus, not on your problems.</p>
+        <p class="lesson-tigrinya">ኣዒንትኻ ኣብ ኢየሱስ ኣቐምጥ ኣብ ጸገማትካ ኣይኮነን።</p>
+        <p class="lesson-amharic">ዓይኖችህን በኢየሱስ ላይ አድርግ በችግሮችህ ላይ ሳይሆን።</p>
+    </div>
+    <span class="page-number">Page 60</span>
+</div>
+
+<!-- ==================== STORY 16: SHADRACH, MESHACH & ABEDNEGO ==================== -->
+<div class="page story-page theme-red">
+    <span class="bible-ref">Daniel 3:13-15</span>
+    <h2 class="story-title">Shadrach, Meshach & Abednego</h2>
+    <p class="story-title-alt">ሻድራቕ ሜሻቕ ኣብድኒጎ • ሲድራቅ ሚሳቅ አብድናጎ</p>
+    <div class="story-illustration">🗿🙅‍♂️👑</div>
+    <p class="story-text"><span class="scene-number">1</span>King Nebuchadnezzar built a giant golden statue and commanded everyone to bow down and worship it. But three young men — Shadrach, Meshach, and Abednego — refused to bow. They worshipped only the true God. The furious king threatened to throw them into a blazing furnace.</p>
+    <div class="tigrinya-text">ንጉስ ናብከደነጾር ግዙፍ ወርቃዊ ሓወልቲ ሰሪሑ ኩሉ ሰብ ክሰግድን ከምልኽን ኣዘዘ። ሰለስተ መናእሰይ ግና — ሻድራቕ ሜሻቕ ኣብድኒጎ — ክሰግዱ ኣበዩ። ንሓቀኛ ኣምላኽ ጥራይ የምልኹ ነበሩ። ዝተቖጥዐ ንጉስ ናብ ዝነድድ እቶን ክድርብዮም ኣፈራርሐ።</div>
+    <div class="amharic-text">ንጉሥ ናቡከደነፆር ግዙፍ የወርቅ ሐውልት ሠርቶ ሁሉም ሰው ሰግዶ እንዲያመልከው አዘዘ። ሦስት ወጣቶች ግን — ሲድራቅ ሚሳቅ አብድናጎ — ለመስገድ እንቢ አሉ። እውነተኛውን አምላክ ብቻ ያመልኩ ነበር። የተቆጣው ንጉሥ ወደ ሚነድ እቶን ሊጥላቸው አስፈራራ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Stay true to God even when others pressure you.</p>
+        <p class="lesson-tigrinya">ካልኦት ክጽቕጡኻ ከለዉ'ውን ንኣምላኽ እሙን ኩን።</p>
+        <p class="lesson-amharic">ሌሎች ሲያስገድዱህም ለእግዚአብሔር ታማኝ ሁን።</p>
+    </div>
+    <span class="page-number">Page 61</span>
+</div>
+
+<div class="page story-page theme-red">
+    <span class="bible-ref">Daniel 3:16-18</span>
+    <h2 class="story-title">Shadrach, Meshach & Abednego</h2>
+    <p class="story-title-alt">ሻድራቕ ሜሻቕ ኣብድኒጎ • ሲድራቅ ሚሳቅ አብድናጎ</p>
+    <div class="story-illustration">🙏💪🔥</div>
+    <p class="story-text"><span class="scene-number">2</span>The three young men bravely answered 'Our God is able to save us from the furnace. But even if He does not, we will never worship your golden statue.' Their faith did not depend on being rescued — they trusted God no matter what would happen.</p>
+    <div class="tigrinya-text">እቶም ሰለስተ መናእሰይ ብትብዓት ኣምላኽና ካብ እቶን ከድሕነና ይኽእል እዩ። እንተዘይኣድሓነና'ውን ንወርቃዊ ሓወልትኻ ከቶ ኣይንሰግድን በሉ። እምነቶም ኣብ ምድሓን ኣይተመርኮሰን — እንታይ ይኹን ብዘየገድስ ንኣምላኽ ኣመኑ።</div>
+    <div class="amharic-text">ሦስቱ ወጣቶች በድፍረት አምላካችን ከእቶን ሊያድነን ይችላል። ባያድነንም እንኳ ለወርቅ ሐውልትህ ከቶ አንሰግድም አሉ። እምነታቸው በመዳን ላይ አልተመሠረተም — ምንም ይሁን ምን እግዚአብሔርን አመኑ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">True faith trusts God whether or not we are rescued.</p>
+        <p class="lesson-tigrinya">ሓቀኛ እምነት እንተደሓንና'ውን እንተዘይደሓንና'ውን ንኣምላኽ ይኣምን።</p>
+        <p class="lesson-amharic">እውነተኛ እምነት ብንድንም ባንድንም እግዚአብሔርን ያምናል።</p>
+    </div>
+    <span class="page-number">Page 62</span>
+</div>
+
+<div class="page story-page theme-red">
+    <span class="bible-ref">Daniel 3:24-27</span>
+    <h2 class="story-title">Shadrach, Meshach & Abednego</h2>
+    <p class="story-title-alt">ሻድራቕ ሜሻቕ ኣብድኒጎ • ሲድራቅ ሚሳቅ አብድናጎ</p>
+    <div class="story-illustration">🔥👼✨</div>
+    <p class="story-text"><span class="scene-number">3</span>The three men were thrown into the fiery furnace. But God sent an angel to protect them! The king looked and saw four men walking unharmed in the fire. When they came out, not even a hair was burned, and they did not smell of smoke. The king praised their mighty God!</p>
+    <div class="tigrinya-text">እቶም ሰለስተ ሰባት ናብ ዝነድድ እቶን ተደርበዩ። ኣምላኽ ግና መልኣኽ ሰዲዱ ሓለዎም! ንጉስ ጠሚቱ ኣርባዕተ ሰባት ብዘይ ጉድኣት ኣብ ሓዊ ክኸዱ ረኣየ። ምስ ወጹ ጸጉሪ'ኳ ኣይተቓጸለን ጨና ትኪ'ውን ኣይነበሮምን። ንጉስ ንሓያል ኣምላኾም ወደሶ!</div>
+    <div class="amharic-text">ሦስቱ ሰዎች ወደ ሚነድ እቶን ተጣሉ። እግዚአብሔር ግን መልአክ ልኮ ጠበቃቸው! ንጉሡ ተመልክቶ አራት ሰዎች ያለ ጉዳት በእሳት ውስጥ ሲሄዱ አየ። ሲወጡ ፀጉር እንኳ አልተቃጠለም የጢስ ሽታም አልነበራቸውም። ንጉሡ ኃያሉን አምላካቸውን አመሰገነ!</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Stand firm for God and He will stand with you.</p>
+        <p class="lesson-tigrinya">ንኣምላኽ ጽኑዕ ኩን ንሱ ድማ ምሳኻ ክጸንዕ እዩ።</p>
+        <p class="lesson-amharic">ለእግዚአብሔር ጸንተህ ቁም እርሱም ከአንተ ጋር ይቆማል።</p>
+    </div>
+    <span class="page-number">Page 63</span>
+</div>
+
+<!-- ==================== STORY 17: THE TALENTS ==================== -->
+<div class="page story-page theme-teal">
+    <span class="bible-ref">Matthew 25:14-15</span>
+    <h2 class="story-title">The Talents</h2>
+    <p class="story-title-alt">ህያባት • ስጦታዎች (ታላንቶች)</p>
+    <div class="story-illustration">💰💰💰</div>
+    <p class="story-text"><span class="scene-number">1</span>Jesus told a story about a master who went on a journey. Before leaving, he gave money called 'talents' to three servants — five to one, two to another, and one to the last, each according to his ability. He trusted them to use what he had given wisely while he was away.</p>
+    <div class="tigrinya-text">ኢየሱስ ብዛዕባ ናብ ጉዕዞ ዝኸደ ጐይታ ዛንታ ነገረ። ቅድሚ ምኻዱ ንሰለስተ ኣገልገልቲ ታላንት ዝብሃል ገንዘብ ሃቦም — ንሓደ ሓሙሽተ ንካልኣይ ክልተ ንመወዳእታ ሓደ ነፍሲ ወከፍ ከም ዓቕሙ። ንዝሃቦም ብጥበብ ክጥቀሙሉ ኣመኖም።</div>
+    <div class="amharic-text">ኢየሱስ ወደ ጉዞ ስለ ሄደ ጌታ ታሪክ ነገረ። ከመሄዱ በፊት ለሦስት አገልጋዮች ታላንት የሚባል ገንዘብ ሰጣቸው — ለአንዱ አምስት ለሌላው ሁለት ለመጨረሻው አንድ እያንዳንዱ እንደ ችሎታው። የሰጣቸውን በጥበብ እንዲጠቀሙ አመናቸው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God gives each of us gifts and trusts us to use them.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ንነፍሲ ወከፍና ህያባት ይህበና ክንጥቀመሉ ድማ ይኣምነና።</p>
+        <p class="lesson-amharic">እግዚአብሔር ለእያንዳንዳችን ስጦታ ይሰጠናል እንድንጠቀምበትም ያምነናል።</p>
+    </div>
+    <span class="page-number">Page 64</span>
+</div>
+
+<div class="page story-page theme-teal">
+    <span class="bible-ref">Matthew 25:16-25</span>
+    <h2 class="story-title">The Talents</h2>
+    <p class="story-title-alt">ህያባት • ስጦታዎች (ታላንቶች)</p>
+    <div class="story-illustration">📈📈⛏️</div>
+    <p class="story-text"><span class="scene-number">2</span>The first two servants worked hard and doubled their talents. But the third servant was afraid, so he buried his one talent in the ground and did nothing with it. When the master returned, the first two showed their gains proudly, but the third had only what he started with.</p>
+    <div class="tigrinya-text">እቶም ቀዳሞት ክልተ ኣገልገልቲ ጽዒሮም ታላንቶም ኣዕረፉ። ሳልሳይ ኣገልጋሊ ግና ፈሪሁ ሓንቲ ታላንቱ ኣብ ምድሪ ቀበረ ገለ'ኳ ኣይገበረላን። ጐይታ ምስ ተመልሰ ቀዳሞት ክልተ ረብሓኦም ብሓበን ኣርኣዩ ሳልሳይ ግና ዝጀመሮ ጥራይ ነበሮ።</div>
+    <div class="amharic-text">የመጀመሪያዎቹ ሁለት አገልጋዮች ጠንክረው ታላንታቸውን አበዙ። ሦስተኛው አገልጋይ ግን ፈርቶ አንዲቱን ታላንቱን በምድር ቀበረ ምንም አላደረገባትም። ጌታው ሲመለስ የመጀመሪያዎቹ ሁለት ትርፋቸውን በኩራት አሳዩ ሦስተኛው ግን የጀመረውን ብቻ ነበረው።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Fear should not stop us from using our God-given gifts.</p>
+        <p class="lesson-tigrinya">ፍርሒ ኣምላኽ ዝሃበና ህያባት ካብ ምጥቃም ኣይተዓንቅፈና።</p>
+        <p class="lesson-amharic">ፍርሃት እግዚአብሔር የሰጠንን ስጦታ ከመጠቀም አያግደን።</p>
+    </div>
+    <span class="page-number">Page 65</span>
+</div>
+
+<div class="page story-page theme-teal">
+    <span class="bible-ref">Matthew 25:26-29</span>
+    <h2 class="story-title">The Talents</h2>
+    <p class="story-title-alt">ህያባት • ስጦታዎች (ታላንቶች)</p>
+    <div class="story-illustration">👏🌟🎁</div>
+    <p class="story-text"><span class="scene-number">3</span>The master praised the two faithful servants: 'Well done, good and faithful servant!' But he was disappointed with the servant who buried his talent out of fear. Jesus taught that God wants us to use our gifts and abilities boldly, not hide them away.</p>
+    <div class="tigrinya-text">ጐይታ ንክልቲኦም እሙናት ኣገልገልቲ ወደሶም ሰናይ ግብሪ ጽቡቕን እሙንን ኣገልጋሊ! በለ። ብፍርሒ ታላንቱ ዝቐበረ ኣገልጋሊ ግና ኣጉሃዮ። ኢየሱስ ኣምላኽ ህያባትናን ዓቕምናን ብትብዓት ክንጥቀም ከም ዝደሊ ከይንሓብኦም መሃረ።</div>
+    <div class="amharic-text">ጌታው ሁለቱን ታማኝ አገልጋዮች አመሰገናቸው መልካም ሥራ ደግና ታማኝ አገልጋይ! አለ። በፍርሃት ታላንቱን የቀበረውን አገልጋይ ግን አሳዘነው። ኢየሱስ እግዚአብሔር ስጦታዎቻችንንና ችሎታችንን በድፍረት እንድንጠቀም እንደሚፈልግ ደብቀን እንዳናስቀር አስተማረ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Use your God-given gifts faithfully and boldly.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ዝሃበካ ህያባት ብታኣማንነትን ብትብዓትን ተጠቐም።</p>
+        <p class="lesson-amharic">እግዚአብሔር የሰጠህን ስጦታ በታማኝነትና በድፍረት ተጠቀም።</p>
+    </div>
+    <span class="page-number">Page 66</span>
+</div>
+
+<!-- ==================== STORY 18: NEHEMIAH REBUILDS THE WALL ==================== -->
+<div class="page story-page theme-indigo">
+    <span class="bible-ref">Nehemiah 1:3-4</span>
+    <h2 class="story-title">Nehemiah Rebuilds the Wall</h2>
+    <p class="story-title-alt">ነህምያ ንመንደቕ ይሃንጽ • ነህምያ ቅጥሩን ሠራ</p>
+    <div class="story-illustration">😢🧱🙏</div>
+    <p class="story-text"><span class="scene-number">1</span>Nehemiah heard sad news: the walls of Jerusalem were broken down and its gates burned. His people were in trouble and disgrace. Nehemiah wept and prayed to God for many days, asking for help to rebuild the city he loved.</p>
+    <div class="tigrinya-text">ነህምያ ዜና ሓዘን ሰምዐ መናድቕ ኢየሩሳሌም ፈሪሶም ደጌታታ ተቓጺሎም። ህዝቡ ኣብ ጸበባን ውርደትን ነበሩ። ነህምያ ንብዙሕ መዓልቲ በኸየን ናብ ኣምላኽ ጸለየን ንዝፈተዋ ከተማ ንምህናጽ ሓገዝ ሓተተ።</div>
+    <div class="amharic-text">ነህምያ የሚያሳዝን ዜና ሰማ የኢየሩሳሌም ቅጥር ፈርሶ በሮቿ ተቃጥለዋል። ሕዝቡ በመከራና በውርደት ነበሩ። ነህምያ ለብዙ ቀናት አለቀሰ ወደ እግዚአብሔርም ጸለየ የሚወዳትን ከተማ ለመሥራት እርዳታ ጠየቀ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Great work begins with prayer and a caring heart.</p>
+        <p class="lesson-tigrinya">ዓቢ ስራሕ ብጸሎትን ብዝግደስ ልብን ይጅምር።</p>
+        <p class="lesson-amharic">ታላቅ ሥራ በጸሎትና በሚያስብ ልብ ይጀምራል።</p>
+    </div>
+    <span class="page-number">Page 67</span>
+</div>
+
+<div class="page story-page theme-indigo">
+    <span class="bible-ref">Nehemiah 4:6-9</span>
+    <h2 class="story-title">Nehemiah Rebuilds the Wall</h2>
+    <p class="story-title-alt">ነህምያ ንመንደቕ ይሃንጽ • ነህምያ ቅጥሩን ሠራ</p>
+    <div class="story-illustration">👷‍♂️👷‍♀️🧱</div>
+    <p class="story-text"><span class="scene-number">2</span>Nehemiah led the people to rebuild the wall together. Enemies mocked them and tried to stop the work, but Nehemiah kept praying and encouraged everyone to keep going. The people worked with all their heart, some building while others stood guard.</p>
+    <div class="tigrinya-text">ነህምያ ንህዝቢ መንደቕ ብሓባር ክሃንጹ መርሖም። ጸላእቲ ላገጹሎም ስራሕ ከቋርጹ ፈተኑ ነህምያ ግና ይጽሊ ነበረ ንኹሉ ክቕጽሉ ኣተባብዖም። ህዝቢ ብምሉእ ልቦም ሰርሑ ገሊኦም ይሃንጹ ገሊኦም ይሕልዉ ነበሩ።</div>
+    <div class="amharic-text">ነህምያ ሕዝቡን ቅጥሩን አብረው እንዲሠሩ መራቸው። ጠላቶች አፌዙባቸው ሥራውን ለማስቆም ሞከሩ ነህምያ ግን ይጸልይ ነበር ሁሉንም እንዲቀጥሉ አበረታታ። ሕዝቡ በሙሉ ልባቸው ሠሩ አንዳንዶች ሲሠሩ ሌሎች ይጠብቁ ነበር።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Don't let others discourage you from doing good work.</p>
+        <p class="lesson-tigrinya">ካልኦት ጽቡቕ ስራሕ ካብ ምግባር ከየተሓሳስቡኻ።</p>
+        <p class="lesson-amharic">ሌሎች መልካም ሥራ ከመሥራት እንዳያሰናክሉህ።</p>
+    </div>
+    <span class="page-number">Page 68</span>
+</div>
+
+<div class="page story-page theme-indigo">
+    <span class="bible-ref">Nehemiah 6:15-16</span>
+    <h2 class="story-title">Nehemiah Rebuilds the Wall</h2>
+    <p class="story-title-alt">ነህምያ ንመንደቕ ይሃንጽ • ነህምያ ቅጥሩን ሠራ</p>
+    <div class="story-illustration">🏛️🎉🙌</div>
+    <p class="story-text"><span class="scene-number">3</span>Amazingly, the entire wall was rebuilt in just 52 days! When the enemies heard, they were afraid and realized this work had been done with the help of God. The people rejoiced. With prayer, teamwork, and perseverance, they had accomplished something great.</p>
+    <div class="tigrinya-text">ብዘደንቕ ኩሉ መንደቕ ኣብ 52 መዓልቲ ጥራይ ተሃነጸ! ጸላእቲ ምስ ሰምዑ ፈርሁ እዚ ስራሕ ብሓገዝ ኣምላኽ ከም ዝተገብረ ኣስተውዓሉ። ህዝቢ ተሓጐሱ። ብጸሎትን ብሓባር ምስራሕን ብጽንዓትን ዓቢ ነገር ፈጸሙ።</div>
+    <div class="amharic-text">በሚያስደንቅ ሁኔታ ቅጥሩ ሁሉ በ52 ቀናት ብቻ ተሠራ! ጠላቶች ሲሰሙ ፈሩ ይህ ሥራ በእግዚአብሔር እርዳታ እንደተሠራ ተረዱ። ሕዝቡ ደስ አላቸው። በጸሎት በትብብርና በጽናት ታላቅ ነገር ፈጸሙ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">With prayer and teamwork, great things are possible.</p>
+        <p class="lesson-tigrinya">ብጸሎትን ብሓባር ምስራሕን ዓበይቲ ነገራት ይከኣል።</p>
+        <p class="lesson-amharic">በጸሎትና በትብብር ታላላቅ ነገሮች ይቻላሉ።</p>
+    </div>
+    <span class="page-number">Page 69</span>
+</div>
+
+<!-- ==================== STORY 19: THE MUSTARD SEED ==================== -->
+<div class="page story-page theme-green">
+    <span class="bible-ref">Matthew 13:31-32</span>
+    <h2 class="story-title">The Mustard Seed</h2>
+    <p class="story-title-alt">ፍረ ኣድሪ • የሰናፍጭ ዘር</p>
+    <div class="story-illustration">🌱🤏☀️</div>
+    <p class="story-text"><span class="scene-number">1</span>Jesus told a parable: 'The kingdom of God is like a tiny mustard seed. It is the smallest of all seeds — so small you can barely see it.' A person planted this little seed in their garden, believing that something wonderful would grow from it.</p>
+    <div class="tigrinya-text">ኢየሱስ ምሳሌ ነገረ መንግስቲ ኣምላኽ ከም ንእሽቶ ፍረ ኣድሪ እያ። ካብ ኩሉ ዘርኢ ትንእስ — ክሳብ ብዓይኒ ዘይትርአ ንእሽቶ። ሓደ ሰብ ካብኣ ዘደንቕ ነገር ከም ዝበቍል ኣሚኑ ነዛ ንእሽቶ ዘርኢ ኣብ ጀርዲኑ ተኸላ።</div>
+    <div class="amharic-text">ኢየሱስ ምሳሌ ነገረ የእግዚአብሔር መንግሥት እንደ ትንሽ የሰናፍጭ ዘር ናት። ከዘሮች ሁሉ ታንሳለች — በዓይን ለማየት እስኪያስቸግር ትንሽ። አንድ ሰው ከእሷ ድንቅ ነገር እንደሚበቅል አምኖ ይህችን ትንሽ ዘር በአትክልቱ ተከላት።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Even the smallest beginning holds great potential.</p>
+        <p class="lesson-tigrinya">ዝንኣሰ ጅማሮ'ውን ዓቢ ዓቕሚ ሒዙ ኣሎ።</p>
+        <p class="lesson-amharic">ትንሹም ጅምር ታላቅ አቅም ይዟል።</p>
+    </div>
+    <span class="page-number">Page 70</span>
+</div>
+
+<div class="page story-page theme-green">
+    <span class="bible-ref">Matthew 13:32</span>
+    <h2 class="story-title">The Mustard Seed</h2>
+    <p class="story-title-alt">ፍረ ኣድሪ • የሰናፍጭ ዘር</p>
+    <div class="story-illustration">🌳🐦🐦</div>
+    <p class="story-text"><span class="scene-number">2</span>But when that tiny seed grew, it became the largest of all garden plants — a tall tree! Birds came and made their nests in its branches, finding shelter and rest. Jesus taught that God's kingdom, and our faith, can start small but grow into something big and beautiful.</p>
+    <div class="tigrinya-text">እታ ንእሽቶ ዘርኢ ምስ በቐለት ግና ካብ ኩሉ ተኽሊ ጀርዲን ዝዓበየት ኮነት — ነዊሕ ኦም! ኣዕዋፍ መጺአን ኣብ ጨናፍራ ጎጆ ገበራ መዕቆብን ዕረፍትን ረኸባ። ኢየሱስ መንግስቲ ኣምላኽን እምነትናን ንኡስ ጀሚሩ ናብ ዓቢን ጽቡቕን ክዓቢ ከም ዝኽእል መሃረ።</div>
+    <div class="amharic-text">ያች ትንሽ ዘር ስታድግ ግን ከአትክልት ተክሎች ሁሉ ትልቁ ሆነች — ረጅም ዛፍ! ወፎች መጥተው በቅርንጫፎቿ ጎጆ ሠሩ መጠለያና ዕረፍት አገኙ። ኢየሱስ የእግዚአብሔር መንግሥትና እምነታችን ትንሽ ጀምሮ ወደ ትልቅና ውብ ነገር ሊያድግ እንደሚችል አስተማረ።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">Small beginnings can lead to great things with God.</p>
+        <p class="lesson-tigrinya">ንኡስ ጅማሮ ምስ ኣምላኽ ናብ ዓበይቲ ነገራት ይመርሕ።</p>
+        <p class="lesson-amharic">ከእግዚአብሔር ጋር ትንሽ ጅምር ወደ ታላቅ ነገር ይመራል።</p>
+    </div>
+    <span class="page-number">Page 71</span>
+</div>
+
+<!-- ==================== STORY 20: MARY'S SONG OF PRAISE ==================== -->
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Luke 1:26-31</span>
+    <h2 class="story-title">Mary's Song of Praise</h2>
+    <p class="story-title-alt">መዝሙር ውዳሰ ማርያም • የማርያም የምስጋና መዝሙር</p>
+    <div class="story-illustration">👼💫🙏</div>
+    <p class="story-text"><span class="scene-number">1</span>The angel Gabriel appeared to a young woman named Mary. He told her 'Do not be afraid, Mary. You have found favor with God. You will give birth to a son, and you shall call Him Jesus. He will be the Son of the Most High.' Mary was amazed and humbled by this news.</p>
+    <div class="tigrinya-text">መልኣኽ ገብርኤል ንማርያም እትብሃል መንእሰይ ጓል ኣንስተይቲ ተገልጸ። ኣይትፍርሒ ማርያም ኣብ ቅድሚ ኣምላኽ ሞገስ ረኺብኪ ኣለኺ። ወዲ ክትወልዲ ኢኺ ስሙ ድማ ኢየሱስ ክትብልዮ ኢኺ። ወዲ ልዑል ክኸውን እዩ በላ። ማርያም በዚ ዜና ተገረመትን ተሓተትን።</div>
+    <div class="amharic-text">መልአኩ ገብርኤል ማርያም ለምትባል ወጣት ሴት ተገለጠ። አትፍሪ ማርያም በእግዚአብሔር ፊት ሞገስ አግኝተሻል። ወንድ ልጅ ትወልጃለሽ ስሙንም ኢየሱስ ትዪዋለሽ። የልዑል ልጅ ይሆናል አላት። ማርያም በዚህ ዜና ተገረመችና ራሷን ዝቅ አደረገች።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">God chooses humble hearts to do His special work.</p>
+        <p class="lesson-tigrinya">ኣምላኽ ፍሉይ ስርሑ ንምግባር ትሑታት ልቢ ይመርጽ።</p>
+        <p class="lesson-amharic">እግዚአብሔር ልዩ ሥራውን ለማድረግ ትሑት ልቦችን ይመርጣል።</p>
+    </div>
+    <span class="page-number">Page 72</span>
+</div>
+
+<div class="page story-page theme-pink">
+    <span class="bible-ref">Luke 1:46-49</span>
+    <h2 class="story-title">Mary's Song of Praise</h2>
+    <p class="story-title-alt">መዝሙር ውዳሰ ማርያም • የማርያም የምስጋና መዝሙር</p>
+    <div class="story-illustration">🎵💗🌟</div>
+    <p class="story-text"><span class="scene-number">2</span>Mary was filled with joy and sang a beautiful song of praise: 'My soul glorifies the Lord, and my spirit rejoices in God my Savior! For He has been mindful of His humble servant. From now on all generations will call me blessed.' Mary thanked God with all her heart.</p>
+    <div class="tigrinya-text">ማርያም ብሓጐስ ተመሊኣ ጽቡቕ መዝሙር ውዳሰ ዘመረት ነፍሰይ ንጐይታ ተኽብር መንፈሰይ ድማ ብኣምላኽ መድሓንየይ ይሕጎስ! ንትሑት ኣገልጋሊቱ ዘኪሩ እዩ። ካብ ሕጂ ኩሎም ወለዶታት ብጽዕቲ ክብሉኒ እዮም። ማርያም ብምሉእ ልባ ንኣምላኽ ኣመስገነት።</div>
+    <div class="amharic-text">ማርያም በደስታ ተሞልታ ውብ የምስጋና መዝሙር ዘመረች ነፍሴ ጌታን ታከብራለች መንፈሴም በአምላኬ በመድኃኒቴ ደስ ይለዋል! ትሑት አገልጋዩን አስቧልና። ከአሁን ጀምሮ ትውልዶች ሁሉ ብፅዕት ይሉኛል። ማርያም በሙሉ ልቧ እግዚአብሔርን አመሰገነች።</div>
+    <div class="lesson-box">
+        <h4>LESSON / ትምህርቲ / ትምህርት</h4>
+        <p class="lesson-english">A humble heart praises God and receives His greatest blessings.</p>
+        <p class="lesson-tigrinya">ትሑት ልቢ ንኣምላኽ ይውድስ ዝዓበየ በረኸቱ ድማ ይቕበል።</p>
+        <p class="lesson-amharic">ትሑት ልብ እግዚአብሔርን ያመሰግናል ታላቁን በረከቱም ይቀበላል።</p>
+    </div>
+    <span class="page-number">Page 73</span>
+</div>
+
+<!-- ==================== CLOSING PAGE ==================== -->
+<div class="page" style="background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #0d47a1 100%); border: 8px solid #ffd700; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <div style="font-size: 4em; margin-bottom: 20px;">📖✝️🙏</div>
+    <h2 style="font-family: 'Merriweather', serif; color: #4caf50; font-size: 2.2em; margin-bottom: 15px;">The End</h2>
+    <h3 style="color: #ff9800; font-size: 1.5em; margin-bottom: 10px;">መወዳእታ • መጨረሻ</h3>
+    <p style="color: white; font-size: 1.1em; margin: 20px 40px; line-height: 1.8;">Thank you for reading these 20 Bible Stories with Moral Lessons. May these stories help you grow in faith, love, and wisdom every day!</p>
+    <p style="color: #b3e5fc; font-size: 1em; margin-top: 20px;">እዞም 20 ዛንታታት መጽሓፍ ቅዱስ ብምንባብኩም የቐንየለይ። እዞም ዛንታታት ብእምነት ብፍቕርን ብጥበብን ክትዓብዩ ይሓግዙኹም!</p>
+    <p style="color: #c8e6c9; font-size: 1em; margin-top: 10px;">እነዚን 20 የመጽሐፍ ቅዱስ ታሪኮች ስላነበባችሁ እናመሰግናለን። እነዚህ ታሪኮች በእምነት በፍቅርና በጥበብ እንድታድጉ ይርዷችሁ!</p>
+    <div style="margin-top: 40px; padding: 15px 30px; border: 2px solid #ffd700; border-radius: 30px; color: #ffd700; font-size: 0.9em;">Ages 6-19 | Trilingual Edition | 20 Complete Stories</div>
+</div>
+
+</body>
+</html>
