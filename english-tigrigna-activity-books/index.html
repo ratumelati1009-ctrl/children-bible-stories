@@ -7,19 +7,26 @@
 <link rel="stylesheet" href="assets/book.css">
 <style>
   body{ background:#f3eefb; }
-  .home{ max-width:900px; margin:40px auto; padding:30px; background:#fff; border-radius:18px; box-shadow:0 6px 24px rgba(0,0,0,.12);}
+  .home{ max-width:940px; margin:40px auto; padding:30px; background:#fff; border-radius:18px; box-shadow:0 6px 24px rgba(0,0,0,.12);}
   .home h1{ font-family:'Fredoka',sans-serif; color:var(--royal); font-size:32pt; text-align:center;}
   .home h1 .ti{ display:block; color:var(--rose); font-size:22pt; margin-top:6px;}
+  .author{ text-align:center; color:var(--royal); font-weight:600; margin-top:2px;}
+  .author .ti{ color:var(--rose); }
   .booklist{ list-style:none; padding:0; }
   .booklist li{ margin:10px 0; }
-  .booklist a{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink);
-    border:2px solid var(--royal); border-radius:12px; padding:14px 18px; font-size:15pt; transition:.15s;}
-  .booklist a:hover{ background:var(--soft); }
-  .booklist .n{ background:var(--gold); color:#fff; width:34px; height:34px; border-radius:50%;
+  .row{ display:flex; align-items:center; gap:12px;
+    border:2px solid var(--royal); border-radius:12px; padding:12px 16px; }
+  .row .n{ background:var(--gold); color:#fff; width:34px; height:34px; border-radius:50%;
     display:inline-flex; align-items:center; justify-content:center; font-weight:700; flex:0 0 34px;}
-  .ready{ margin-left:auto; font-size:10pt; background:var(--leaf); color:#fff; padding:3px 10px; border-radius:12px;}
-  .soon{ margin-left:auto; font-size:10pt; background:#bbb; color:#fff; padding:3px 10px; border-radius:12px;}
-  .ti{ font-family:'Noto Sans Ethiopic',sans-serif; }
+  .row .titles{ flex:1; }
+  .row .titles b{ color:var(--ink); font-size:14pt; }
+  .row .titles .ti{ color:var(--royal); font-size:12pt; }
+  .row a{ text-decoration:none; font-weight:700; padding:6px 12px; border-radius:8px; font-size:11pt; }
+  .row a.html{ background:var(--soft); color:var(--royal); }
+  .row a.pdf{ background:var(--rose); color:#fff; }
+  .row a:hover{ opacity:.85; }
+  .ti{ font-family:'Noto Sans Ethiopic','Noto Serif Ethiopic',sans-serif; }
+  .note{ text-align:center; }
 </style>
 </head>
 <body>
@@ -27,22 +34,35 @@
   <h1>Bible Activity Books
     <span class="ti">መጻሕፍቲ ንጥፈት መጽሓፍ ቅዱስ</span>
   </h1>
-  <p style="text-align:center; color:var(--gold); font-weight:600;">English &ndash; Tigrigna &nbsp;·&nbsp; Ages 4&ndash;12 &nbsp;·&nbsp; Print-ready (A4)</p>
+  <p class="author">Written by Daniel Tesfamariam <span class="ti">· ብዳንኤል ተስፋማርያም</span></p>
+  <p style="text-align:center; color:var(--gold); font-weight:600;">English &ndash; Tigrigna &nbsp;·&nbsp; Ages 4&ndash;12 &nbsp;·&nbsp; 42 pages each &nbsp;·&nbsp; Print-ready (A4)</p>
   <div class="divider"></div>
-  <ol class="booklist">
-    <li><a href="books/01-esther/index.html"><span class="n">1</span> Esther's Brave Choice <span class="ti">&nbsp;ጅግንነት ኣስቴር</span> <span class="ready">Ready ✓</span></a></li>
-    <li><a><span class="n">2</span> Daniel and the Lions' Den <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">3</span> David and Goliath <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">4</span> Noah's Ark <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">5</span> Jonah and the Big Fish <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">6</span> Joseph's Amazing Journey <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">7</span> Moses and the Red Sea <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">8</span> The Good Samaritan <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">9</span> Jesus Feeds the Five Thousand <span class="soon">Planned</span></a></li>
-    <li><a><span class="n">10</span> The Lost Sheep <span class="soon">Planned</span></a></li>
-  </ol>
-  <p class="small" style="text-align:center;">To print: open a book, then use the <strong>🖨️ Print / Save PDF</strong> button (or Ctrl/Cmd + P) and choose "Save as PDF", A4, margins: None.</p>
-  <p class="small" style="text-align:center; color:var(--rose);">⚠ The Tigrigna text needs native-speaker proofreading before commercial publication.</p>
+  <ul class="booklist">
+    <li><div class="row"><span class="n">1</span><div class="titles"><b>Esther's Brave Choice</b><span class="ti">ጅግንነት ኣስቴር</span></div>
+      <a class="html" href="books/01-esther/index.html">HTML</a><a class="pdf" href="pdf/01-Esthers-Brave-Choice.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">2</span><div class="titles"><b>Daniel and the Lions' Den</b><span class="ti">ዳንኤልን ጉድጓድ ኣናብስን</span></div>
+      <a class="html" href="books/02-daniel/index.html">HTML</a><a class="pdf" href="pdf/02-Daniel-and-the-Lions-Den.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">3</span><div class="titles"><b>David and Goliath</b><span class="ti">ዳዊትን ጎልያድን</span></div>
+      <a class="html" href="books/03-david/index.html">HTML</a><a class="pdf" href="pdf/03-David-and-Goliath.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">4</span><div class="titles"><b>Noah's Ark</b><span class="ti">መርከብ ኖህ</span></div>
+      <a class="html" href="books/04-noah/index.html">HTML</a><a class="pdf" href="pdf/04-Noahs-Ark.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">5</span><div class="titles"><b>Jonah and the Big Fish</b><span class="ti">ዮናስን እታ ዓባይ ዓሳን</span></div>
+      <a class="html" href="books/05-jonah/index.html">HTML</a><a class="pdf" href="pdf/05-Jonah-and-the-Big-Fish.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">6</span><div class="titles"><b>Joseph's Amazing Journey</b><span class="ti">ዜደንቕ ጕዕዞ ዮሴፍ</span></div>
+      <a class="html" href="books/06-joseph/index.html">HTML</a><a class="pdf" href="pdf/06-Josephs-Amazing-Journey.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">7</span><div class="titles"><b>Moses and the Red Sea</b><span class="ti">ሙሴን ቀይሕ ባሕርን</span></div>
+      <a class="html" href="books/07-moses/index.html">HTML</a><a class="pdf" href="pdf/07-Moses-and-the-Red-Sea.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">8</span><div class="titles"><b>The Good Samaritan</b><span class="ti">እቲ ሕያዋይ ሳምራዊ</span></div>
+      <a class="html" href="books/08-good-samaritan/index.html">HTML</a><a class="pdf" href="pdf/08-The-Good-Samaritan.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">9</span><div class="titles"><b>Jesus Feeds the Five Thousand</b><span class="ti">የሱስ ንሓሙሽተ ሽሕ መገበ</span></div>
+      <a class="html" href="books/09-feeding-5000/index.html">HTML</a><a class="pdf" href="pdf/09-Jesus-Feeds-the-Five-Thousand.pdf">PDF</a></div></li>
+    <li><div class="row"><span class="n">10</span><div class="titles"><b>The Lost Sheep</b><span class="ti">እታ ዝጠፍአት በጊዕ</span></div>
+      <a class="html" href="books/10-lost-sheep/index.html">HTML</a><a class="pdf" href="pdf/10-The-Lost-Sheep.pdf">PDF</a></div></li>
+  </ul>
+  <div class="divider"></div>
+  <p class="small note">Each book has the Bible story, memory verse (ICB), comprehension, sequencing, word search, crossword, matching, colouring, count &amp; colour, "What Would You Do?" scenarios, spot-the-difference, maze, dot-to-dot, craft, bookmarks, secret code, prayer, reflection and a completion certificate.</p>
+  <p class="small note">To print: open a book and use the <strong>🖨️ Print / Save PDF</strong> button (or Ctrl/Cmd + P) &rarr; "Save as PDF", A4, margins: None. Ready-made PDFs are in the <strong>pdf/</strong> folder.</p>
+  <p class="small note" style="color:var(--rose);">⚠ The Tigrigna text needs native-speaker proofreading before commercial publication.</p>
 </div>
 </body>
 </html>
